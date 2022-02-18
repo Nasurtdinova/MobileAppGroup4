@@ -16,5 +16,10 @@ namespace MobileAppGroup4
         {
             InitializeComponent();
         }
+
+        private void Register_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new RegistrationPage());
+        }
     }
 }

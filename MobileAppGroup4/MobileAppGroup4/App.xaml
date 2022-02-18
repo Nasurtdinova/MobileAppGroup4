@@ -13,5 +13,15 @@
             <Setter Property="VerticalTextAlignment" Value="Center" />
             <Setter Property="HorizontalTextAlignment" Value="Start" />
         </Style>
+        <Style TargetType="NavigationPage">
+            <Setter Property="BackgroundColor" Value="#535151"/>
+            <Setter Property="BarBackgroundColor" Value="#B4A390"/>
+        </Style>
+        <Style TargetType="TabbedPage" ApplyToDerivedTypes="True">
+            <Setter Property="BarBackgroundColor" Value="#B4A390"/>
+        </Style>
+        <Style TargetType="Label">
+            <Setter Property="FontFamily" Value="Radley"></Setter>
+        </Style>
     </Application.Resources>
 </Application>

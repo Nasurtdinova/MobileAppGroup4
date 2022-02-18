@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace MobileAppGroup4.Pages
+namespace MobileAppGroup4
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class RegistrationPage : Shell
+    public partial class RegistrationPage : ContentPage
     {
         public RegistrationPage()
         {

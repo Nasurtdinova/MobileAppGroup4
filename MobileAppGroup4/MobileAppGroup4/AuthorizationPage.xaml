@@ -9,8 +9,7 @@
                 HorizontalOptions="CenterAndExpand">
                 <Label Text="ONLY CATS.COM"  FontSize="35"
                 HorizontalOptions="CenterAndExpand" />
-                <Label Text="here you can look after yourself a hot kitty" HorizontalOptions="CenterAndExpand"
-                 />
+                <Label Text="here you can look after yourself a hot kitty" HorizontalOptions="CenterAndExpand"/>
             </StackLayout>
             <StackLayout Spacing="30" >
                 <StackLayout>
@@ -24,7 +23,7 @@
             </StackLayout>
             <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand" >
                 <Button Text="Sign in" HorizontalOptions="FillAndExpand"></Button>
-                <Button Text="Sign up" HorizontalOptions="FillAndExpand"></Button>
+                <Button Text="Sign up" HorizontalOptions="FillAndExpand" Clicked="Register_Clicked"></Button>
             </StackLayout>
         </StackLayout>
      
