@@ -1,9 +1,11 @@
-﻿using MobileAppGroup4.Services;
+﻿using MobileAppGroup4.Pages;
+using MobileAppGroup4.Services;
 using MobileAppGroup4.Views;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+[assembly: ExportFont("MaterialIcons-Regular.ttf", Alias = "Font")]
 namespace MobileAppGroup4
 {
     public partial class App : Application
@@ -12,9 +14,7 @@ namespace MobileAppGroup4
         public App()
         {
             InitializeComponent();
-
-            DependencyService.Register<MockDataStore>();
-            MainPage = new AppShell();
+            MainPage = new NavigationPage(new Main());
         }
 
         protected override void OnStart()
