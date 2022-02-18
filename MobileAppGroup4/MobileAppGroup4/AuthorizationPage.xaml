@@ -2,15 +2,31 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MobileAppGroup4.Main"
-             BackgroundImageSource="background.png">
+             BackgroundImageSource="background.png" NavigationPage.HasNavigationBar="False" Visual="Material">
     <ContentPage.Content>
-        <StackLayout>
-            <Label             FontFamily="Font"
-            FontSize="30"
-            Text="&#xe150;"
-
-                VerticalOptions="CenterAndExpand" 
+        <StackLayout VerticalOptions="Center" Spacing="50" Padding="30">
+            <StackLayout VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand">
+                <Label Text="ONLY CATS.COM"  FontSize="35"
                 HorizontalOptions="CenterAndExpand" />
+                <Label Text="here you can look after yourself a hot kitty" HorizontalOptions="CenterAndExpand"
+                 />
+            </StackLayout>
+            <StackLayout Spacing="30" >
+                <StackLayout>
+                    <Label Text="Email"  TextColor="black" FontSize="Large"></Label>
+                    <Entry x:Name="loginEntry"/>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Password" TextColor="black" FontSize="Large"></Label>
+                    <Entry x:Name="passwordEntry" IsPassword ="True" />
+                </StackLayout>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand" >
+                <Button Text="Sign in" HorizontalOptions="FillAndExpand"></Button>
+                <Button Text="Sign up" HorizontalOptions="FillAndExpand"></Button>
+            </StackLayout>
         </StackLayout>
+     
     </ContentPage.Content>
 </ContentPage>
