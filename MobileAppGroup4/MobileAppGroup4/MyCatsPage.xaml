@@ -12,10 +12,10 @@
                 Text="&#xe145;"
                 VerticalOptions="CenterAndExpand"
                 HorizontalOptions="End"
-                TextColor="#B4A390"
-                Padding="5">
+                TextColor="White"
+                Padding="10">
                 <Label.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="AddCats" />
+                    <TapGestureRecognizer Tapped="AddCat" />
                 </Label.GestureRecognizers>
             </Label>
         </StackLayout>
@@ -27,8 +27,15 @@
                     <DataTemplate>
                         <ViewCell>
                             <ViewCell.View>
-                                <StackLayout Orientation="Horizontal">
-                                    <Label Padding="10" Text="Имя:{Binding Name}" TextColor="Black" FontSize="Medium" />
+                                <StackLayout Spacing="-5">
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="Name:" TextColor="Black" />
+                                        <Label Text="{Binding Name}" TextColor="Black"/>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="Breed:" TextColor="Black"/>
+                                        <Label Text="{Binding Breed}" TextColor="Black"/>
+                                    </StackLayout>
                                 </StackLayout>
                             </ViewCell.View>
                         </ViewCell>

@@ -1,19 +1,36 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MobileAppGroup4.AddCat">
+             x:Class="MobileAppGroup4.AddCat" Visual="Material">
     <NavigationPage.TitleView>
         <Label Text="Add cat" FontSize="Large" TextColor="White" Margin="30,0"></Label>
     </NavigationPage.TitleView>
     <ContentPage.Content>
-        <StackLayout Padding="30">
+        <StackLayout Padding="20">
             <StackLayout  Spacing="20">
-                <Entry x:Name="nameProject" Placeholder="Имя проекта"/>
-                <Editor x:Name="breedProject" Placeholder="Описание"/>
+                <StackLayout>
+                    <Label Text="Имя котика"  TextColor="black"></Label>
+                    <Entry x:Name="nameCat" />
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Порода"  TextColor="black"></Label>
+                    <Entry x:Name="breedCat"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Пол"  TextColor="black"></Label>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Мужской"  TextColor="black"></Label>
+                        <Switch IsToggled="{Binding Men, Mode=TwoWay}"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Женский"  TextColor="black"></Label>
+                        <Switch IsToggled="{Binding Woman, Mode=TwoWay}"/>
+                    </StackLayout>
+                </StackLayout>
             </StackLayout>
             <StackLayout VerticalOptions="EndAndExpand" Orientation="Horizontal">
                 <Button Text="Отмена" Clicked="Cancel" HorizontalOptions="FillAndExpand"/>
-                <Button Text="Добавить" Clicked="SaveProject" HorizontalOptions="FillAndExpand"/>
+                <Button Text="Добавить" Clicked="SaveCat" HorizontalOptions="FillAndExpand"/>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

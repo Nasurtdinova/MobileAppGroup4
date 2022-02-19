@@ -14,6 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2337" />  
     <PackageReference Include="Xamarin.Essentials" Version="1.7.1" />  
     <PackageReference Include="Xamarin.Forms.Visual.Material" Version="5.0.0.2337" />
@@ -26,7 +27,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="MainPage.xaml">
+    <EmbeddedResource Update="AddCat.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="MyCatsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Pages\AuthorizationPage.xaml">
