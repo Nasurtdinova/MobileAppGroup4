@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MobileAppGroup4.SQLite;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,6 +26,14 @@ namespace MobileAppGroup4
         private async void AddCat(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new AddCat());
+        }
+
+        private async void catsList_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            Cat selectedProject = (Cat)e.SelectedItem;
+            EditCat projectPage = new EditCat();
+            projectPage.BindingContext = selectedProject;
+            await Navigation.PushAsync(projectPage);
         }
     }
 }

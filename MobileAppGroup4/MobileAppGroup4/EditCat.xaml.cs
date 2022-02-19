@@ -11,12 +11,12 @@ using Xamarin.Forms.Xaml;
 namespace MobileAppGroup4
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class AddCat : ContentPage
+    public partial class EditCat : ContentPage
     {
-        public AddCat()
+        public EditCat()
         {
             InitializeComponent();
-            for (int i = 0;i<=20; i++)
+            for (int i = 0; i <= 20; i++)
             {
                 pickerYear.Items.Add(i.ToString());
             }
@@ -27,22 +27,27 @@ namespace MobileAppGroup4
             this.BindingContext = this;
         }
 
-        private async void SaveCat(object sender, EventArgs e)
+        private async void TapGestureRecognizer_Tapped(object sender, EventArgs e)
         {
-            Cat cat = new Cat()
+            var project = (Cat)BindingContext;
+            if (await DisplayAlert(" ", $"Вы хотите удалить {project.Name}?", "Удалить", "Отмена"))
             {
-                Name = nameCat.Text,
-                Breed = breedCat.Text,
-                Men = men.IsToggled,
-                Woman = woman.IsToggled,
-                Year = pickerYear.SelectedIndex,
-                Mounth = pickerMounth.SelectedIndex
-            };
-            if (!String.IsNullOrEmpty(cat.Name))
-            {
-                App.Database.SaveCat(cat);
+                App.Database.DeleteCat(project.Id);
+                await Navigation.PushAsync(new MyCatsPage());
             }
-            await this.Navigation.PopAsync();
+        }
+
+        private async void SaveProject(object sender, EventArgs e)
+        {
+            var project = (Cat)BindingContext;
+            if (await DisplayAlert(" ", $"Вы хотите изменить {project.Name}?", "Изменить", "Отмена"))
+            {
+                if (!String.IsNullOrEmpty(project.Name))
+                {
+                    App.Database.SaveCat(project);
+                }
+                await this.Navigation.PopAsync();
+            }
         }
 
         private void Cancel(object sender, EventArgs e)

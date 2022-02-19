@@ -25,7 +25,7 @@ namespace MobileAppGroup4.SQLite
         {
             return database.Delete<Cat>(id);
         }
-        public int SaveProject(Cat item)
+        public int SaveCat(Cat item)
         {
             if (item.Id != 0)
             {

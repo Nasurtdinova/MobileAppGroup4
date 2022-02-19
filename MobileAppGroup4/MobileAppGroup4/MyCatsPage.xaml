@@ -22,7 +22,7 @@
     </NavigationPage.TitleView>
     <ScrollView>
         <StackLayout>
-            <ListView x:Name="catsList" SeparatorColor="Black" ItemsSource="{Binding}">
+            <ListView x:Name="catsList" SeparatorColor="Black" ItemsSource="{Binding}" ItemSelected="catsList_ItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

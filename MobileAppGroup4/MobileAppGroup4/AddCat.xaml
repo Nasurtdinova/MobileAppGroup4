@@ -20,11 +20,24 @@
                     <Label Text="Пол"  TextColor="black"></Label>
                     <StackLayout Orientation="Horizontal">
                         <Label Text="Мужской"  TextColor="black"></Label>
-                        <Switch IsToggled="{Binding Men, Mode=TwoWay}"/>
+                        <Switch x:Name="men" Toggled="men_Toggled" IsToggled="{Binding Men, Mode=TwoWay}"/>
                     </StackLayout>
                     <StackLayout Orientation="Horizontal">
                         <Label Text="Женский"  TextColor="black"></Label>
-                        <Switch IsToggled="{Binding Woman, Mode=TwoWay}"/>
+                        <Switch x:Name="woman" Toggled="woman_Toggled" IsToggled="{Binding Woman, Mode=TwoWay}"/>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Возраст"  TextColor="black"></Label>
+                    <StackLayout Orientation="Horizontal">
+                        <StackLayout Orientation="Vertical">
+                            <Label Text="Лет"  TextColor="black"></Label>
+                            <Picker x:Name="pickerYear"></Picker>
+                        </StackLayout>
+                        <StackLayout Orientation="Vertical">
+                            <Label Text="Месяцев"  TextColor="black"></Label>
+                            <Picker x:Name="pickerMounth"></Picker>
+                        </StackLayout>
                     </StackLayout>
                 </StackLayout>
             </StackLayout>

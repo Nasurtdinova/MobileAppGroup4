@@ -14,5 +14,7 @@ namespace MobileAppGroup4.SQLite
         public string Breed { get; set; }
         public Boolean Men { get; set; }
         public Boolean Woman { get; set; }
+        public int Year { get; set; }
+        public int Mounth { get; set; }
     }
 }

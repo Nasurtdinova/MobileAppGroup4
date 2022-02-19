@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileAppGroup4.EditCat" Visual="Material">
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Изменить кота" FontSize="Large" VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="CenterAndExpand" TextColor="White"></Label>
+            <Label
+                FontFamily="Font"
+                FontSize="Title"
+                Text="&#xe16c;"
+                TextColor="White"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="End"
+                Padding="10">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                </Label.GestureRecognizers>
+            </Label>
+        </StackLayout>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="20" Spacing="20">
+                <StackLayout Spacing="20">
+                    <StackLayout>
+                        <Label Text="Имя котика"  TextColor="black"></Label>
+                        <Entry Text="{Binding Name}" x:Name="nameCat" />
+                    </StackLayout>
+                    <StackLayout>
+                        <Label Text="Порода"  TextColor="black"></Label>
+                        <Entry Text="{Binding Breed}" x:Name="breedCat"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Пол"  TextColor="black"></Label>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Мужской"  TextColor="black"></Label>
+                            <Switch x:Name="men" Toggled="men_Toggled" IsToggled="{Binding Men}"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Женский"  TextColor="black"></Label>
+                            <Switch x:Name="woman" Toggled="woman_Toggled" IsToggled="{Binding Woman}"/>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout>
+                        <Label Text="Возраст"  TextColor="black"></Label>
+                        <StackLayout Orientation="Horizontal">
+                            <StackLayout Orientation="Vertical">
+                                <Label Text="Лет"  TextColor="black"></Label>
+                                <Picker x:Name="pickerYear" SelectedIndex="{Binding Year}"></Picker>
+                            </StackLayout>
+                            <StackLayout Orientation="Vertical">
+                                <Label Text="Месяцев"  TextColor="black"></Label>
+                                <Picker x:Name="pickerMounth" SelectedIndex="{Binding Mounth}"></Picker>
+                            </StackLayout>
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout VerticalOptions="EndAndExpand" Orientation="Horizontal">
+                    <Button Text="Отмена" Clicked="Cancel" HorizontalOptions="FillAndExpand"/>
+                    <Button Text="Изменить" Clicked="SaveProject" HorizontalOptions="FillAndExpand"/>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
