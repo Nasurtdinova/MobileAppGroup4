@@ -31,7 +31,7 @@ namespace MobileAppGroup4
         private async void catsList_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             Cat selectedProject = (Cat)e.SelectedItem;
-            EditCat projectPage = new EditCat();
+            EditCat projectPage = new EditCat(selectedProject);
             projectPage.BindingContext = selectedProject;
             await Navigation.PushAsync(projectPage);
         }

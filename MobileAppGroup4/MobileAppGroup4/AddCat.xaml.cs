@@ -41,7 +41,8 @@ namespace MobileAppGroup4
                 Year = pickerYear.SelectedIndex,
                 Mounth = pickerMounth.SelectedIndex,
                 Recommend = recommendCat.Text,
-                PhotoPath = pathName
+                PhotoPath = pathName,
+                IsFriendly = friendly.IsToggled
             };
             if (!String.IsNullOrEmpty(cat.Name))
             {
@@ -50,11 +51,11 @@ namespace MobileAppGroup4
             await this.Navigation.PopAsync();
         }
 
-        private void UpdateList()
-        {
-            catPhoto.Source = pathName;
-            this.BindingContext = this;
-        }
+        //private void UpdateList()
+        //{
+           // catPhoto.Source = pathName;
+            //this.BindingContext = this;
+       // }
         private void Cancel(object sender, EventArgs e)
         {
             this.Navigation.PopAsync();
@@ -81,7 +82,7 @@ namespace MobileAppGroup4
             {
                 await DisplayAlert("Сообщение об ошибке", ex.Message, "OK");
             }
-            UpdateList();
+            //UpdateList();
         }
 
         private async void TakePhotoAsync(object sender, EventArgs e)
@@ -106,7 +107,17 @@ namespace MobileAppGroup4
             {
                 await DisplayAlert("Сообщение об ошибке", ex.Message, "OK");
             }
-            UpdateList();
+            //UpdateList();
+        }
+
+        private void friendly_Toggled(object sender, ToggledEventArgs e)
+        {
+            noFriendly.IsToggled = false;
+        }
+
+        private void noFriendly_Toggled(object sender, ToggledEventArgs e)
+        {
+            friendly.IsToggled = false;
         }
     }
 }

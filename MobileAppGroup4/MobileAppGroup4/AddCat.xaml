@@ -7,8 +7,8 @@
     </NavigationPage.TitleView>
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout Padding="20" Spacing="20">
-                <StackLayout  Spacing="20">
+            <StackLayout Padding="20">
+                <StackLayout >
                     <StackLayout>
                         <Label Text="Имя котика"  TextColor="black"></Label>
                         <Entry x:Name="nameCat" />
@@ -21,11 +21,11 @@
                         <Label Text="Пол"  TextColor="black"></Label>
                         <StackLayout Orientation="Horizontal">
                             <Label Text="Мужской"  TextColor="black"></Label>
-                            <Switch x:Name="men" Toggled="men_Toggled" IsToggled="{Binding Men, Mode=TwoWay}"/>
+                            <Switch x:Name="men" Toggled="men_Toggled"/>
                         </StackLayout>
                         <StackLayout Orientation="Horizontal">
                             <Label Text="Женский"  TextColor="black"></Label>
-                            <Switch x:Name="woman" Toggled="woman_Toggled" IsToggled="{Binding Woman, Mode=TwoWay}"/>
+                            <Switch x:Name="woman" Toggled="woman_Toggled"/>
                         </StackLayout>
                     </StackLayout>
                     <StackLayout>
@@ -43,7 +43,7 @@
                     </StackLayout>
                     <StackLayout>
                         <Label Text="Загрузите фото (необязательно)"  TextColor="black"></Label>
-                        <Image x:Name="catPhoto" Source="{Binding pathName}"></Image>
+                        
                         <StackLayout VerticalOptions="EndAndExpand" Orientation="Horizontal">
                             <Button Clicked="GetPhotoAsync" Text="Галерея" HorizontalOptions="FillAndExpand"/>
                             <Button Clicked="TakePhotoAsync" Text="Камера" HorizontalOptions="FillAndExpand"/>
@@ -52,6 +52,20 @@
                     <StackLayout>
                         <Label Text="Рекомендации по уходу и другие сведения"  TextColor="black"></Label>
                         <Editor x:Name="recommendCat"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical">
+                        <Label Text="Дружелюбна ли ваша кошка?"  TextColor="black"></Label>
+                        <StackLayout Orientation="Horizontal">
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Да"  TextColor="black"></Label>
+                                <Switch x:Name="friendly" Toggled="friendly_Toggled"/>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Нет"  TextColor="black"></Label>
+                                <Switch x:Name="noFriendly" Toggled="noFriendly_Toggled"/>
+                            </StackLayout>
+                        </StackLayout>
+                      
                     </StackLayout>
                 </StackLayout>
                 <StackLayout VerticalOptions="EndAndExpand" Orientation="Horizontal">

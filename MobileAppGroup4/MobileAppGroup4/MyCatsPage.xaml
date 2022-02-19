@@ -28,6 +28,9 @@
                         <ViewCell>
                             <ViewCell.View>
                                 <StackLayout Spacing="-5">
+                                    <StackLayout>
+                                        <Image x:Name="catPhoto" Source="{Binding PhotoPath}" Aspect="Fill"></Image>
+                                    </StackLayout>
                                     <StackLayout Orientation="Horizontal">
                                         <Label Text="Name:" TextColor="Black" />
                                         <Label Text="{Binding Name}" TextColor="Black"/>

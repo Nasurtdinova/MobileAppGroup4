@@ -16,7 +16,7 @@ namespace MobileAppGroup4
     public partial class EditCat : ContentPage
     {
         public string pathName;
-        public EditCat()
+        public EditCat(Cat cat)
         {
             InitializeComponent();
             for (int i = 0; i <= 20; i++)
@@ -26,6 +26,14 @@ namespace MobileAppGroup4
             for (int i = 0; i <= 11; i++)
             {
                 pickerMounth.Items.Add(i.ToString());
+            }
+            if (cat.IsFriendly)
+            {
+                friendly.IsToggled = true;
+            }
+            else
+            {
+                noFriendly.IsToggled = true;
             }
             this.BindingContext = this;
         }
@@ -43,6 +51,7 @@ namespace MobileAppGroup4
         private async void SaveProject(object sender, EventArgs e)
         {
             var project = (Cat)BindingContext;
+            project.IsFriendly = friendly.IsToggled;
             if (await DisplayAlert(" ", $"Вы хотите изменить {project.Name}?", "Изменить", "Отмена"))
             {
                 if (!String.IsNullOrEmpty(project.Name))
@@ -103,6 +112,16 @@ namespace MobileAppGroup4
             {
                 await DisplayAlert("Сообщение об ошибке", ex.Message, "OK");
             }
+        }
+
+        private void friendly_Toggled(object sender, ToggledEventArgs e)
+        {
+            noFriendly.IsToggled = false;
+        }
+
+        private void noFriendly_Toggled(object sender, ToggledEventArgs e)
+        {
+            friendly.IsToggled = false;
         }
     }
 }

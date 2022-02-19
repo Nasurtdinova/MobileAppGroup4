@@ -18,5 +18,6 @@ namespace MobileAppGroup4.SQLite
         public int Mounth { get; set; }
         public string Recommend { get; set; }
         public string PhotoPath { get; set; }
+        public Boolean IsFriendly { get; set; }
     }
 }
