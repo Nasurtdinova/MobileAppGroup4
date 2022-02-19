@@ -6,45 +6,60 @@
         <Label Text="Add cat" FontSize="Large" TextColor="White" Margin="30,0"></Label>
     </NavigationPage.TitleView>
     <ContentPage.Content>
-        <StackLayout Padding="20">
-            <StackLayout  Spacing="20">
-                <StackLayout>
-                    <Label Text="Имя котика"  TextColor="black"></Label>
-                    <Entry x:Name="nameCat" />
-                </StackLayout>
-                <StackLayout>
-                    <Label Text="Порода"  TextColor="black"></Label>
-                    <Entry x:Name="breedCat"/>
-                </StackLayout>
-                <StackLayout Orientation="Horizontal">
-                    <Label Text="Пол"  TextColor="black"></Label>
-                    <StackLayout Orientation="Horizontal">
-                        <Label Text="Мужской"  TextColor="black"></Label>
-                        <Switch x:Name="men" Toggled="men_Toggled" IsToggled="{Binding Men, Mode=TwoWay}"/>
+        <ScrollView>
+            <StackLayout Padding="20" Spacing="20">
+                <StackLayout  Spacing="20">
+                    <StackLayout>
+                        <Label Text="Имя котика"  TextColor="black"></Label>
+                        <Entry x:Name="nameCat" />
+                    </StackLayout>
+                    <StackLayout>
+                        <Label Text="Порода"  TextColor="black"></Label>
+                        <Entry x:Name="breedCat"/>
                     </StackLayout>
                     <StackLayout Orientation="Horizontal">
-                        <Label Text="Женский"  TextColor="black"></Label>
-                        <Switch x:Name="woman" Toggled="woman_Toggled" IsToggled="{Binding Woman, Mode=TwoWay}"/>
-                    </StackLayout>
-                </StackLayout>
-                <StackLayout>
-                    <Label Text="Возраст"  TextColor="black"></Label>
-                    <StackLayout Orientation="Horizontal">
-                        <StackLayout Orientation="Vertical">
-                            <Label Text="Лет"  TextColor="black"></Label>
-                            <Picker x:Name="pickerYear"></Picker>
+                        <Label Text="Пол"  TextColor="black"></Label>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Мужской"  TextColor="black"></Label>
+                            <Switch x:Name="men" Toggled="men_Toggled" IsToggled="{Binding Men, Mode=TwoWay}"/>
                         </StackLayout>
-                        <StackLayout Orientation="Vertical">
-                            <Label Text="Месяцев"  TextColor="black"></Label>
-                            <Picker x:Name="pickerMounth"></Picker>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Женский"  TextColor="black"></Label>
+                            <Switch x:Name="woman" Toggled="woman_Toggled" IsToggled="{Binding Woman, Mode=TwoWay}"/>
                         </StackLayout>
                     </StackLayout>
+                    <StackLayout>
+                        <Label Text="Возраст"  TextColor="black"></Label>
+                        <StackLayout Orientation="Horizontal">
+                            <StackLayout Orientation="Vertical">
+                                <Label Text="Лет"  TextColor="black"></Label>
+                                <Picker x:Name="pickerYear"></Picker>
+                            </StackLayout>
+                            <StackLayout Orientation="Vertical">
+                                <Label Text="Месяцев"  TextColor="black"></Label>
+                                <Picker x:Name="pickerMounth"></Picker>
+                            </StackLayout>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout>
+                        <Label Text="Загрузите фото (необязательно)"  TextColor="black"></Label>
+                        <Image x:Name="catPhoto" Source="{Binding pathName}"></Image>
+                        <StackLayout VerticalOptions="EndAndExpand" Orientation="Horizontal">
+                            <Button Clicked="GetPhotoAsync" Text="Галерея" HorizontalOptions="FillAndExpand"/>
+                            <Button Clicked="TakePhotoAsync" Text="Камера" HorizontalOptions="FillAndExpand"/>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout>
+                        <Label Text="Рекомендации по уходу и другие сведения"  TextColor="black"></Label>
+                        <Editor x:Name="recommendCat"/>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout VerticalOptions="EndAndExpand" Orientation="Horizontal">
+                    <Button Text="Отмена" Clicked="Cancel" HorizontalOptions="FillAndExpand"/>
+                    <Button Text="Добавить" Clicked="SaveCat" HorizontalOptions="FillAndExpand"/>
                 </StackLayout>
             </StackLayout>
-            <StackLayout VerticalOptions="EndAndExpand" Orientation="Horizontal">
-                <Button Text="Отмена" Clicked="Cancel" HorizontalOptions="FillAndExpand"/>
-                <Button Text="Добавить" Clicked="SaveCat" HorizontalOptions="FillAndExpand"/>
-            </StackLayout>
-        </StackLayout>
+        </ScrollView>
+       
     </ContentPage.Content>
 </ContentPage>

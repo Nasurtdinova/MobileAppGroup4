@@ -16,5 +16,7 @@ namespace MobileAppGroup4.SQLite
         public Boolean Woman { get; set; }
         public int Year { get; set; }
         public int Mounth { get; set; }
+        public string Recommend { get; set; }
+        public string PhotoPath { get; set; }
     }
 }

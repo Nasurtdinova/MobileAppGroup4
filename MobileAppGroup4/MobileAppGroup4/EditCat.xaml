@@ -56,6 +56,17 @@
                             </StackLayout>
                         </StackLayout>
                     </StackLayout>
+                    <StackLayout>
+                        <Label Text="Рекомендации по уходу и другие сведения"  TextColor="black"></Label>
+                        <Editor Text="{Binding Recommend}" x:Name="recommendCat"/>
+                    </StackLayout>
+                    <StackLayout>
+                        <Label Text="Рекомендации по уходу и другие сведения"  TextColor="black"></Label>
+                        <StackLayout VerticalOptions="EndAndExpand" Orientation="Horizontal">
+                            <Button Clicked="GetPhotoAsync" Text="Галерея" HorizontalOptions="FillAndExpand"/>
+                            <Button Clicked="TakePhotoAsync" Text="Камера" HorizontalOptions="FillAndExpand"/>
+                        </StackLayout>
+                    </StackLayout>
                 </StackLayout>
                 <StackLayout VerticalOptions="EndAndExpand" Orientation="Horizontal">
                     <Button Text="Отмена" Clicked="Cancel" HorizontalOptions="FillAndExpand"/>
