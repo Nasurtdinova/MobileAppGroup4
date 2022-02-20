@@ -24,7 +24,7 @@ namespace MobileAppGroup4
 
         private void Authorization_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new MyCatsPage());
+            Navigation.PushAsync(new AppShell());
         }
     }
 }
