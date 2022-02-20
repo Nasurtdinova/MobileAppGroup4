@@ -35,5 +35,10 @@ namespace MobileAppGroup4
             projectPage.BindingContext = selectedProject;
             await Navigation.PushAsync(projectPage);
         }
+
+        private void SwipeItem_Invoked(object sender, EventArgs e)
+        {
+
+        }
     }
 }

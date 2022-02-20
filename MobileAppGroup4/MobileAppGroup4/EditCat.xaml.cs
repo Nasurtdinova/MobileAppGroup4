@@ -19,6 +19,7 @@ namespace MobileAppGroup4
         public EditCat(Cat cat)
         {
             InitializeComponent();
+            pathName = cat.PhotoPath;
             for (int i = 0; i <= 20; i++)
             {
                 pickerYear.Items.Add(i.ToString());
@@ -52,6 +53,7 @@ namespace MobileAppGroup4
         {
             var project = (Cat)BindingContext;
             project.IsFriendly = friendly.IsToggled;
+            project.PhotoPath = pathName;
             if (await DisplayAlert(" ", $"Вы хотите изменить {project.Name}?", "Изменить", "Отмена"))
             {
                 if (!String.IsNullOrEmpty(project.Name))

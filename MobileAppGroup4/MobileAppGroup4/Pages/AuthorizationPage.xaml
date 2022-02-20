@@ -9,7 +9,7 @@
                 HorizontalOptions="CenterAndExpand">
                 <Label Text="ONLY CATS.COM"  FontSize="35"
                 HorizontalOptions="CenterAndExpand" />
-                <Label Text="here you can look after yourself a hot kitty" HorizontalOptions="CenterAndExpand"/>
+                <Label Text="here you can look after yourself a hot kitty" FontSize="Subtitle" HorizontalOptions="CenterAndExpand"/>
             </StackLayout>
             <StackLayout Spacing="30" >
                 <StackLayout>
