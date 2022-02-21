@@ -24,7 +24,16 @@ namespace MobileAppGroup4
 
         private void Authorization_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new MyCatsPage());
+            var user = App.Database.GetUsers().Where(u => u.Email == loginEntry.Text && u.Password == passwordEntry.Text).ToList().FirstOrDefault();
+            if (user != null)
+            {
+                Application.Current.MainPage = new AppShell(user);
+            }
+            else
+            {
+                DisplayAlert("Ошибка", "Неверные данные", "ОК");
+            }
+            
         }
     }
 }

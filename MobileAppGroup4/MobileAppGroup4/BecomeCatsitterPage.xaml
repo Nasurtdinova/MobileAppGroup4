@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileAppGroup4.BecomeCatsitterPage" Visual="Material">
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Стать кэтситтером" FontSize="Large" VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="CenterAndExpand" TextColor="White"></Label>
+            <Label
+                FontFamily="Font"
+                FontSize="Title"
+                Text="&#xe16c;"
+                TextColor="White"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="End"
+                Padding="10">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer/>
+                </Label.GestureRecognizers>
+            </Label>
+        </StackLayout>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="20" Spacing="20">
+                <StackLayout Spacing="20" >
+                    <StackLayout>
+                        <Label Text="Имя"  TextColor="black"></Label>
+                        <Entry x:Name="nameCattsiter" />
+                    </StackLayout>
+                    <StackLayout>
+                        <Label Text="Фамилия"  TextColor="black"></Label>
+                        <Entry x:Name="surnameCattsiter" />
+                    </StackLayout>
+                    <StackLayout>
+                        <Label Text="Отчество"  TextColor="black"></Label>
+                        <Entry x:Name="patronymicCattsiter" />
+                    </StackLayout>
+                    <StackLayout>
+                        <Label Text="Дата рождения"  TextColor="black"></Label>
+                        <DatePicker x:Name="birthdayDate" />
+                    </StackLayout>
+                    <StackLayout>
+                        <Label Text="Номер телефона"  TextColor="black"></Label>
+                        <Entry x:Name="phoneNumber" />
+                    </StackLayout>
+                    <StackLayout>
+                        <StackLayout Orientation="Vertical">
+                            <Label Text="Адрес"  TextColor="black"></Label>
+                            <Editor x:Name="address" BackgroundColor="#dbdbdb"  HeightRequest="150" WidthRequest="370"/>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout>
+                        <StackLayout Orientation="Vertical">
+                            <Label Text="О себе"  TextColor="black"></Label>
+                            <Editor x:Name="info" BackgroundColor="#dbdbdb"  HeightRequest="150" WidthRequest="370"/>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <StackLayout Orientation="Vertical">
+                                <Label Text="Тип жилья"  TextColor="black"></Label>
+                                <Picker x:Name="pickerHousing" SelectedIndex="{Binding Housing}">
+                                    <Picker.Items>
+                                        <x:String>Квартира</x:String >
+                                        <x:String>Дом</x:String >
+                                    </Picker.Items>
+                                </Picker>
+                            </StackLayout>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <StackLayout Orientation="Vertical">
+                                <Label Text="Опыт ухода"  TextColor="black"></Label>
+                                <Picker x:Name="pickerYears" SelectedIndex="{Binding Years}"></Picker>
+                            </StackLayout>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" >
+                        <StackLayout Orientation="Vertical">
+                            <Label Text="Дети до 10 лет"  TextColor="black"></Label>
+                            <StackLayout Orientation="Horizontal">
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Да"  TextColor="black"></Label>
+                                    <Switch x:Name="child" Toggled="child_Toggled"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Нет"  TextColor="black"></Label>
+                                    <Switch x:Name="noChild" Toggled="noChild_Toggled"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <StackLayout Orientation="Vertical">
+                            <Label Text="Можете давать лекарства"  TextColor="black"></Label>
+                            <StackLayout Orientation="Horizontal" >
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Да"  TextColor="black"></Label>
+                                    <Switch x:Name="medicines"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Нет"  TextColor="black"></Label>
+                                    <Switch x:Name="noMedicines"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout VerticalOptions="EndAndExpand" Orientation="Horizontal">
+                    <Button Text="Отмена" HorizontalOptions="FillAndExpand"/>
+                    <Button Text="Изменить" HorizontalOptions="FillAndExpand"/>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

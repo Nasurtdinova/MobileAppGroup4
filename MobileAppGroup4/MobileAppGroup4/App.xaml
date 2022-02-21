@@ -24,5 +24,8 @@
             <Setter Property="FontSize" Value="Medium"></Setter>
             <Setter Property="FontFamily" Value="Radley"></Setter>
         </Style>
+        <Style TargetType="Shell">
+            <Setter Property="BackgroundColor" Value="#B4A390"></Setter>
+        </Style>
     </Application.Resources>
 </Application>

@@ -1,10 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MobileAppGroup4.AddCat" Visual="Material">
-    <NavigationPage.TitleView>
-        <Label Text="Add cat" FontSize="Large" TextColor="White" Margin="60,0"></Label>
-    </NavigationPage.TitleView>
+             x:Class="MobileAppGroup4.AddCat" Visual="Material" Title="Add cat" >
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Padding="20">

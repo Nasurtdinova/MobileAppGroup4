@@ -30,7 +30,7 @@
                 </StackLayout>
             </StackLayout>
             <StackLayout VerticalOptions="EndAndExpand">
-                <Button Text="Зарегистрироваться"></Button>
+                <Button Text="Зарегистрироваться" Clicked="btnRegistrClicked" ></Button>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

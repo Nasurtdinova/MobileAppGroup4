@@ -1,7 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MobileAppGroup4.EditCat" Visual="Material">
+             x:Class="MobileAppGroup4.EditCat" Visual="Material" Title="My cats">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Clicked="RemoveCat">
+            <ToolbarItem.IconImageSource>
+                <FontImageSource FontFamily="Font" Glyph="&#xe16c;"/>
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
     <NavigationPage.TitleView>
         <StackLayout Orientation="Horizontal">
             <Label Text="Изменить кота" FontSize="Large" VerticalOptions="CenterAndExpand"
@@ -15,7 +22,7 @@
                 HorizontalOptions="End"
                 Padding="10">
                 <Label.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                    <TapGestureRecognizer Tapped="RemoveCat" />
                 </Label.GestureRecognizers>
             </Label>
         </StackLayout>

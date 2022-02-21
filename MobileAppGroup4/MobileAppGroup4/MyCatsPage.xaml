@@ -1,25 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MobileAppGroup4.MyCatsPage">
-    <NavigationPage.TitleView>
-        <StackLayout Orientation="Horizontal">
-            <Label Text="My cats" FontSize="Large" VerticalOptions="CenterAndExpand"
-                   HorizontalOptions="CenterAndExpand"  TextColor="White" ></Label>
-            <Label
-                FontFamily="Font"
-                FontSize="Title"
-                Text="&#xe145;"
-                VerticalOptions="CenterAndExpand"
-                HorizontalOptions="End"
-                TextColor="White"
-                Padding="10">
-                <Label.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="AddCat" />
-                </Label.GestureRecognizers>
-            </Label>
-        </StackLayout>
-    </NavigationPage.TitleView>
+             x:Class="MobileAppGroup4.MyCatsPage" Title="My cats">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Clicked="AddCat">
+            <ToolbarItem.IconImageSource>
+                <FontImageSource FontFamily="Font" Glyph="&#xe145;"/>
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
     <ScrollView>
         <StackLayout>
             <ListView x:Name="catsList" SeparatorColor="Black" ItemsSource="{Binding}" ItemSelected="catsList_ItemSelected">

@@ -13,9 +13,12 @@ namespace MobileAppGroup4
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MyCatsPage : ContentPage
     {
+        public int idUser { get; set; }
         public MyCatsPage()
         {
             InitializeComponent();
+            //idUser = id;
+            this.BindingContext = this;
         }
         protected override void OnAppearing()
         {

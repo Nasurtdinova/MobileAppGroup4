@@ -39,12 +39,12 @@ namespace MobileAppGroup4
             this.BindingContext = this;
         }
 
-        private async void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        private async void RemoveCat(object sender, EventArgs e)
         {
-            var project = (Cat)BindingContext;
-            if (await DisplayAlert(" ", $"Вы хотите удалить {project.Name}?", "Удалить", "Отмена"))
+            var cat = (Cat)BindingContext;
+            if (await DisplayAlert(" ", $"Вы хотите удалить {cat.Name}?", "Удалить", "Отмена"))
             {
-                App.Database.DeleteCat(project.Id);
+                App.Database.DeleteCat(cat.Id);
                 await Navigation.PushAsync(new MyCatsPage());
             }
         }
