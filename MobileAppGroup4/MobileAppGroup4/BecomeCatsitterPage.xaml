@@ -1,25 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MobileAppGroup4.BecomeCatsitterPage" Visual="Material">
-    <NavigationPage.TitleView>
-        <StackLayout Orientation="Horizontal">
-            <Label Text="Стать кэтситтером" FontSize="Large" VerticalOptions="CenterAndExpand"
-                   HorizontalOptions="CenterAndExpand" TextColor="White"></Label>
-            <Label
-                FontFamily="Font"
-                FontSize="Title"
-                Text="&#xe16c;"
-                TextColor="White"
-                VerticalOptions="CenterAndExpand"
-                HorizontalOptions="End"
-                Padding="10">
-                <Label.GestureRecognizers>
-                    <TapGestureRecognizer/>
-                </Label.GestureRecognizers>
-            </Label>
-        </StackLayout>
-    </NavigationPage.TitleView>
+             x:Class="MobileAppGroup4.BecomeCatsitterPage" Visual="Material" Title="Стать кэтситтером">
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Padding="20" Spacing="20">
@@ -33,10 +15,6 @@
                         <Entry x:Name="surnameCattsiter" />
                     </StackLayout>
                     <StackLayout>
-                        <Label Text="Отчество"  TextColor="black"></Label>
-                        <Entry x:Name="patronymicCattsiter" />
-                    </StackLayout>
-                    <StackLayout>
                         <Label Text="Дата рождения"  TextColor="black"></Label>
                         <DatePicker x:Name="birthdayDate" />
                     </StackLayout>
@@ -47,20 +25,20 @@
                     <StackLayout>
                         <StackLayout Orientation="Vertical">
                             <Label Text="Адрес"  TextColor="black"></Label>
-                            <Editor x:Name="address" BackgroundColor="#dbdbdb"  HeightRequest="150" WidthRequest="370"/>
+                            <Editor x:Name="address" BackgroundColor="#dbdbdb"/>
                         </StackLayout>
                     </StackLayout>
                     <StackLayout>
                         <StackLayout Orientation="Vertical">
                             <Label Text="О себе"  TextColor="black"></Label>
-                            <Editor x:Name="info" BackgroundColor="#dbdbdb"  HeightRequest="150" WidthRequest="370"/>
+                            <Editor x:Name="info" BackgroundColor="#dbdbdb"/>
                         </StackLayout>
                     </StackLayout>
                     <StackLayout>
                         <StackLayout Orientation="Horizontal">
                             <StackLayout Orientation="Vertical">
                                 <Label Text="Тип жилья"  TextColor="black"></Label>
-                                <Picker x:Name="pickerHousing" SelectedIndex="{Binding Housing}">
+                                <Picker x:Name="pickerHousing" SelectedIndex="{Binding Housing}" WidthRequest="120">
                                     <Picker.Items>
                                         <x:String>Квартира</x:String >
                                         <x:String>Дом</x:String >
@@ -98,11 +76,11 @@
                             <StackLayout Orientation="Horizontal" >
                                 <StackLayout Orientation="Horizontal">
                                     <Label Text="Да"  TextColor="black"></Label>
-                                    <Switch x:Name="medicines"/>
+                                    <Switch x:Name="medicines" Toggled="medicines_Toggled"/>
                                 </StackLayout>
                                 <StackLayout Orientation="Horizontal">
                                     <Label Text="Нет"  TextColor="black"></Label>
-                                    <Switch x:Name="noMedicines"/>
+                                    <Switch x:Name="noMedicines" Toggled="noMedicines_Toggled"/>
                                 </StackLayout>
                             </StackLayout>
                         </StackLayout>
@@ -110,7 +88,7 @@
                 </StackLayout>
                 <StackLayout VerticalOptions="EndAndExpand" Orientation="Horizontal">
                     <Button Text="Отмена" HorizontalOptions="FillAndExpand"/>
-                    <Button Text="Изменить" HorizontalOptions="FillAndExpand"/>
+                    <Button Text="Стать" HorizontalOptions="FillAndExpand"/>
                 </StackLayout>
             </StackLayout>
         </ScrollView>

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace MobileAppGroup4.SQLite
 {
-    [Table("Cats")]
+    [Table("Catsitters")]
     public class Catsitter
     {
         [PrimaryKey, AutoIncrement, Column("_id")]

@@ -31,5 +31,15 @@ namespace MobileAppGroup4
         {
             child.IsToggled = false;
         }
+
+        private void noMedicines_Toggled(object sender, ToggledEventArgs e)
+        {
+            medicines.IsToggled = false;
+        }
+
+        private void medicines_Toggled(object sender, ToggledEventArgs e)
+        {
+            noMedicines.IsToggled = false;
+        }
     }
 }
