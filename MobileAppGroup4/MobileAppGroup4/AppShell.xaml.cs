@@ -20,5 +20,17 @@ namespace MobileAppGroup4
             Iuser = user;
             this.BindingContext = this;
         }
+
+        private async void myCats_Clicked(object sender, EventArgs e)
+        {
+            //Application.Current.MainPage = new MyCatsPage();
+            await Navigation.PushAsync(new MyCatsPage(Iuser.Id));
+        }
+        private void becomeCatsitter_Clicked(object sender, EventArgs e)
+        {
+
+                Navigation.PushAsync(new BecomeCatsitterPage(Iuser));
+            
+        }
     }
 }

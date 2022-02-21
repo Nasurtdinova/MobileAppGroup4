@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MobileAppGroup4.SQLite;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,9 +13,18 @@ namespace MobileAppGroup4
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class BecomeCatsitterPage : ContentPage
     {
-        public BecomeCatsitterPage()
+        public int idUser { get; set; }
+        public User User { get; set; }
+        public BecomeCatsitterPage(User user)
         {
             InitializeComponent();
+            idUser = user.Id;
+            User = user;
+            
+            if (App.Database.GetCatsittersId(User.Id) != null)
+            {
+            Navigation.PushAsync(new WasCatsitterPage(App.Database.GetCatsitter(User.Id)));
+            }
             for (int i = 0; i <= 20; i++)
             {
                 pickerYears.Items.Add(i.ToString());
@@ -40,6 +50,30 @@ namespace MobileAppGroup4
         private void medicines_Toggled(object sender, ToggledEventArgs e)
         {
             noMedicines.IsToggled = false;
+        }
+
+        private async void become_Clicked(object sender, EventArgs e)
+        {
+            Catsitter catsitter = new Catsitter()
+            {
+                Name = nameCattsiter.Text,
+                Surname = surnameCattsiter.Text,
+                birthdayDate = birthdayDate.Date,
+                Address = address.Text,
+                Child = child.IsToggled,
+                Housing = pickerHousing.SelectedIndex.ToString(),
+                Info = info.Text,
+                Phone = Convert.ToInt32(phoneNumber.Text),
+                PracYears = pickerYears.SelectedIndex,
+                Medicines = medicines.IsToggled,
+                IsAdd = true,
+             IdUser = idUser
+            };
+            if (!String.IsNullOrEmpty(catsitter.Name))
+            {
+                App.Database.SaveCatsitter(catsitter);
+            }
+            await Navigation.PushAsync(new WasCatsitterPage(catsitter)); ;
         }
     }
 }

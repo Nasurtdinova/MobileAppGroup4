@@ -12,13 +12,16 @@ namespace MobileAppGroup4.SQLite
         public int Id { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
-        public Boolean Housing { get; set; }
-        public Boolean PracYears { get; set; }
+        public string Housing { get; set; }
+        public int PracYears { get; set; }
         public DateTime birthdayDate { get; set; }
         public int Phone { get; set; }
         public string Address { get; set; }
         public string Info { get; set; }
         public Boolean Child { get; set; }
         public Boolean Medicines { get; set; }
+
+        public int IdUser { get; set; }
+        public Boolean IsAdd { get; set; }
     }
 }

@@ -20,6 +20,6 @@ namespace MobileAppGroup4.SQLite
         public string PhotoPath { get; set; }
         public Boolean IsFriendly { get; set; }
 
-        public int idUser { get; set; }
+        public int IdUser { get; set; }
     }
 }

@@ -19,6 +19,10 @@ namespace MobileAppGroup4.SQLite
         {
             return database.Table<Cat>().ToList();
         }
+        public IEnumerable<Cat> GetCatsId(int id)
+        {
+            return database.Table<Cat>().Where(a=>a.IdUser==id);
+        }
         public Cat GetCat(int id)
         {
             return database.Get<Cat>(id);
@@ -68,6 +72,10 @@ namespace MobileAppGroup4.SQLite
         public IEnumerable<Catsitter> GetCatsitters()
         {
             return database.Table<Catsitter>().ToList();
+        }
+        public Catsitter GetCatsittersId(int id)
+        {
+            return database.Table<Catsitter>().Where(a=>a.IdUser==id).FirstOrDefault();
         }
         public Catsitter GetCatsitter(int id)
         {

@@ -8,11 +8,11 @@
                 <StackLayout Spacing="20" >
                     <StackLayout>
                         <Label Text="Имя"  TextColor="black"></Label>
-                        <Entry x:Name="nameCattsiter" />
+                        <Entry x:Name="nameCattsiter"  Text="{Binding User.Name}"/>
                     </StackLayout>
                     <StackLayout>
                         <Label Text="Фамилия"  TextColor="black"></Label>
-                        <Entry x:Name="surnameCattsiter" />
+                        <Entry x:Name="surnameCattsiter" Text="{Binding User.Surname}"/>
                     </StackLayout>
                     <StackLayout>
                         <Label Text="Дата рождения"  TextColor="black"></Label>
@@ -38,7 +38,7 @@
                         <StackLayout Orientation="Horizontal">
                             <StackLayout Orientation="Vertical">
                                 <Label Text="Тип жилья"  TextColor="black"></Label>
-                                <Picker x:Name="pickerHousing" SelectedIndex="{Binding Housing}" WidthRequest="120">
+                                <Picker x:Name="pickerHousing" WidthRequest="120">
                                     <Picker.Items>
                                         <x:String>Квартира</x:String >
                                         <x:String>Дом</x:String >
@@ -51,7 +51,7 @@
                         <StackLayout Orientation="Horizontal">
                             <StackLayout Orientation="Vertical">
                                 <Label Text="Опыт ухода"  TextColor="black"></Label>
-                                <Picker x:Name="pickerYears" SelectedIndex="{Binding Years}"></Picker>
+                                <Picker x:Name="pickerYears"></Picker>
                             </StackLayout>
                         </StackLayout>
                     </StackLayout>
@@ -88,7 +88,7 @@
                 </StackLayout>
                 <StackLayout VerticalOptions="EndAndExpand" Orientation="Horizontal">
                     <Button Text="Отмена" HorizontalOptions="FillAndExpand"/>
-                    <Button Text="Стать" HorizontalOptions="FillAndExpand"/>
+                    <Button Text="Стать" HorizontalOptions="FillAndExpand" Clicked="become_Clicked"/>
                 </StackLayout>
             </StackLayout>
         </ScrollView>

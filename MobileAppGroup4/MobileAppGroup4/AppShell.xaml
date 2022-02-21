@@ -5,7 +5,7 @@
              x:Class="MobileAppGroup4.AppShell">
     <Shell.FlyoutHeader>
         <StackLayout BackgroundColor="#C9BE82" Padding="10">
-            <abstractions:CircleImage HeightRequest="100" Source="iconShell.png" />
+            <abstractions:CircleImage HeightRequest="100" Source="iconMain.jpg" />
             <StackLayout Orientation="Horizontal">
                 <Label Text="Привет,"/>
                 <Label Text="{Binding Iuser.Name}" />
@@ -14,13 +14,10 @@
         </StackLayout>
     </Shell.FlyoutHeader>
 
-    <FlyoutItem Title="MyCats" Icon="iconMyCats.png">
-        <ShellContent ContentTemplate="{DataTemplate pages:MyCatsPage}" />
+    <FlyoutItem Title="Main page" Icon="iconShell.png">
+        <ShellContent ContentTemplate="{DataTemplate pages:InfoPage}"/>
     </FlyoutItem>
-    <FlyoutItem Title="Catsitter" Icon="xamarin.png">
-        <ShellContent ContentTemplate="{DataTemplate pages:BecomeCatsitterPage}"/>
-    </FlyoutItem>
-    <FlyoutItem Title="Become catsitter" Icon="xamarin.png">
-        <ShellContent ContentTemplate="{DataTemplate pages:BecomeCatsitterPage}"/>
-    </FlyoutItem>
+    <MenuItem Text="My cats" Clicked="myCats_Clicked" IconImageSource="iconMain.jpg" />
+    <MenuItem Text="Become catsitter" Clicked="becomeCatsitter_Clicked" IconImageSource="becomeCatsitter.jpg" />
+    <MenuItem Text="Catsitters"  IconImageSource="Catsitter.jpg" />
 </Shell>

@@ -45,7 +45,7 @@ namespace MobileAppGroup4
             if (await DisplayAlert(" ", $"Вы хотите удалить {cat.Name}?", "Удалить", "Отмена"))
             {
                 App.Database.DeleteCat(cat.Id);
-                await Navigation.PushAsync(new MyCatsPage());
+                await Navigation.PushAsync(new MyCatsPage(cat.IdUser));
             }
         }
 

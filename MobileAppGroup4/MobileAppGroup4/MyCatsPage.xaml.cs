@@ -14,21 +14,21 @@ namespace MobileAppGroup4
     public partial class MyCatsPage : ContentPage
     {
         public int idUser { get; set; }
-        public MyCatsPage()
+        public MyCatsPage(int id)
         {
             InitializeComponent();
-            //idUser = id;
+            idUser = id;
             this.BindingContext = this;
         }
         protected override void OnAppearing()
         {
-            catsList.ItemsSource = App.Database.GetCats();
+            catsList.ItemsSource = App.Database.GetCatsId(idUser);
             base.OnAppearing();
         }
 
         private async void AddCat(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new AddCat());
+            await Navigation.PushAsync(new AddCat(idUser));
         }
 
         private async void catsList_ItemSelected(object sender, SelectedItemChangedEventArgs e)
@@ -37,11 +37,6 @@ namespace MobileAppGroup4
             EditCat projectPage = new EditCat(selectedProject);
             projectPage.BindingContext = selectedProject;
             await Navigation.PushAsync(projectPage);
-        }
-
-        private void SwipeItem_Invoked(object sender, EventArgs e)
-        {
-
         }
     }
 }

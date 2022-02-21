@@ -15,8 +15,9 @@ namespace MobileAppGroup4
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AddCat : ContentPage
     {
+        public int idUser { get; set; }
         public string pathName;
-        public AddCat()
+        public AddCat(int id)
         {
             InitializeComponent();
             for (int i = 0;i <= 20; i++)
@@ -27,6 +28,7 @@ namespace MobileAppGroup4
             {
                 pickerMounth.Items.Add(i.ToString());
             }
+            idUser = id;
             this.BindingContext = this;
         }
 
@@ -42,7 +44,8 @@ namespace MobileAppGroup4
                 Mounth = pickerMounth.SelectedIndex,
                 Recommend = recommendCat.Text,
                 PhotoPath = pathName,
-                IsFriendly = friendly.IsToggled
+                IsFriendly = friendly.IsToggled,
+                IdUser = idUser
             };
             if (!String.IsNullOrEmpty(cat.Name))
             {
