@@ -23,14 +23,16 @@ namespace MobileAppGroup4
 
         private async void myCats_Clicked(object sender, EventArgs e)
         {
-            //Application.Current.MainPage = new MyCatsPage();
             await Navigation.PushAsync(new MyCatsPage(Iuser.Id));
         }
         private void becomeCatsitter_Clicked(object sender, EventArgs e)
         {
+            Navigation.PushAsync(new BecomeCatsitterPage(Iuser));           
+        }
 
-                Navigation.PushAsync(new BecomeCatsitterPage(Iuser));
-            
+        private void catsitters_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new CatsittersPage(Iuser.Id));
         }
     }
 }

@@ -19,5 +19,5 @@
     </FlyoutItem>
     <MenuItem Text="My cats" Clicked="myCats_Clicked" IconImageSource="iconMain.jpg" />
     <MenuItem Text="Become catsitter" Clicked="becomeCatsitter_Clicked" IconImageSource="becomeCatsitter.jpg" />
-    <MenuItem Text="Catsitters"  IconImageSource="Catsitter.jpg" />
+    <MenuItem Text="Catsitters" Clicked="catsitters_Clicked"  IconImageSource="Catsitter.jpg" />
 </Shell>

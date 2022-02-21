@@ -21,7 +21,7 @@ namespace MobileAppGroup4
             idUser = user.Id;
             User = user;
             
-            if (App.Database.GetCatsittersId(User.Id) != null)
+            if (App.Database.GetCatsitterId(User.Id) != null)
             {
             Navigation.PushAsync(new WasCatsitterPage(App.Database.GetCatsitter(User.Id)));
             }

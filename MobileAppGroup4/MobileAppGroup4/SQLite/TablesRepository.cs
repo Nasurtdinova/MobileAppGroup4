@@ -73,9 +73,13 @@ namespace MobileAppGroup4.SQLite
         {
             return database.Table<Catsitter>().ToList();
         }
-        public Catsitter GetCatsittersId(int id)
+        public Catsitter GetCatsitterId(int id)
         {
             return database.Table<Catsitter>().Where(a=>a.IdUser==id).FirstOrDefault();
+        }
+        public IEnumerable<Catsitter> GetCatsittersId(int id)
+        {
+            return database.Table<Catsitter>().Where(a => a.IdUser != id);
         }
         public Catsitter GetCatsitter(int id)
         {
