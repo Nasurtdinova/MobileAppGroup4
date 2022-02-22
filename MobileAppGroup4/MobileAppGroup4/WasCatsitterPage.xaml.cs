@@ -59,7 +59,7 @@ namespace MobileAppGroup4
 
         private async void remove_Clicked(object sender, EventArgs e)
         {
-            if (await DisplayAlert(" ", $"Вы не хотите быть котситтером?", "Да", "Отмена"))
+            if (await DisplayAlert(" ", $"Вы не хотите быть котситтером?", "Да", "Нет"))
             {
                 App.Database.DeleteCatsitter(Catsitter.Id);
                 await Navigation.PushAsync(new BecomeCatsitterPage(App.Database.GetUser(Catsitter.IdUser)));
