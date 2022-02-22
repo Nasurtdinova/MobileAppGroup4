@@ -23,7 +23,7 @@ namespace MobileAppGroup4
             
             if (App.Database.GetCatsitterId(User.Id) != null)
             {
-            Navigation.PushAsync(new WasCatsitterPage(App.Database.GetCatsitter(User.Id)));
+                Navigation.PushAsync(new WasCatsitterPage(App.Database.GetCatsitterId(User.Id)));
             }
             for (int i = 0; i <= 20; i++)
             {
@@ -67,7 +67,7 @@ namespace MobileAppGroup4
                 PracYears = pickerYears.SelectedIndex,
                 Medicines = medicines.IsToggled,
                 IsAdd = true,
-             IdUser = idUser
+                IdUser = idUser
             };
             if (!String.IsNullOrEmpty(catsitter.Name))
             {

@@ -34,5 +34,9 @@ namespace MobileAppGroup4
         {
             Navigation.PushAsync(new CatsittersPage(Iuser.Id));
         }
+        private void exit_Clicked(object sender, EventArgs e)
+        {
+            Application.Current.MainPage = new Main();
+        }
     }
 }
