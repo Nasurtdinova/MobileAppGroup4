@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileAppGroup4.InfoCatsitterPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="{Binding Catsitter.Surname}" Order="Default" Priority="0"></ToolbarItem>
+        <ToolbarItem Text="{Binding Catsitter.Name}" Order="Default" Priority="0"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout Padding="20" Spacing="20">
+            <StackLayout Orientation="Vertical">
+                <Label Text="О себе"  TextColor="black"></Label>
+                <Label x:Name="info" BackgroundColor="#dbdbdb" Text="{Binding Catsitter.Info}"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" >
+                <StackLayout Orientation="Vertical">
+                    <Label Text="Дети до 10 лет"  TextColor="black"></Label>
+                    <Label x:Name="childLabel"  TextColor="black"></Label>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <StackLayout Orientation="Vertical">
+                    <Label Text="Тип жилья"  TextColor="black"></Label>
+                    <Label x:Name="housingLabel" WidthRequest="120">
+                    </Label>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <StackLayout Orientation="Vertical">
+                    <Label Text="Опыт ухода за кошками"  TextColor="black"></Label>
+                    <Picker x:Name="pickerYears" SelectedIndex="{Binding Catsitter.PracYears}"></Picker>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

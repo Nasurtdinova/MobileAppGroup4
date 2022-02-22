@@ -63,7 +63,7 @@ namespace MobileAppGroup4
                 Child = child.IsToggled,
                 Housing = pickerHousing.SelectedIndex.ToString(),
                 Info = info.Text,
-                Phone = Convert.ToInt32(phoneNumber.Text),
+                Phone = Convert.ToInt64(phoneNumber.Text),
                 PracYears = pickerYears.SelectedIndex,
                 Medicines = medicines.IsToggled,
                 IsAdd = true,
@@ -73,7 +73,7 @@ namespace MobileAppGroup4
             {
                 App.Database.SaveCatsitter(catsitter);
             }
-            await Navigation.PushAsync(new WasCatsitterPage(catsitter)); ;
+            await Navigation.PushAsync(new WasCatsitterPage(catsitter)); 
         }
     }
 }

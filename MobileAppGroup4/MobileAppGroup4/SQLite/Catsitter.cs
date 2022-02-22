@@ -15,7 +15,7 @@ namespace MobileAppGroup4.SQLite
         public string Housing { get; set; }
         public int PracYears { get; set; }
         public DateTime birthdayDate { get; set; }
-        public int Phone { get; set; }
+        public long Phone { get; set; }
         public string Address { get; set; }
         public string Info { get; set; }
         public Boolean Child { get; set; }

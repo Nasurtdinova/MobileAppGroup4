@@ -27,5 +27,11 @@ namespace MobileAppGroup4
             catsittersList.ItemsSource = App.Database.GetCatsittersId(idUser);
             base.OnAppearing();
         }
+
+        private async void catsittersList_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            Catsitter selectedProject = (Catsitter)e.SelectedItem;
+            await Navigation.PushAsync(new InfoCatsitterPage(selectedProject));
+        }
     }
 }

@@ -8,7 +8,6 @@
                 <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
                     <Label Text="Вы являетесь котситтером," />
                     <Label Text="{Binding Catsitter.Name}"/>
-                    <Label Text="!" />
                 </StackLayout>
 
                 <StackLayout>
@@ -96,7 +95,7 @@
                 </StackLayout>
                 <StackLayout VerticalOptions="EndAndExpand" Orientation="Horizontal">
                     <Button Text="Удалить" Clicked="remove_Clicked" HorizontalOptions="FillAndExpand"/>
-                    <Button Text="Изменить" HorizontalOptions="FillAndExpand"/>
+                    <Button Text="Изменить" Clicked="update_Clicked" HorizontalOptions="FillAndExpand"/>
                 </StackLayout>
             </StackLayout>
            
