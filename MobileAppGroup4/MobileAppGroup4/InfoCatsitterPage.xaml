@@ -8,29 +8,40 @@
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout Padding="20" Spacing="20">
+            <Image x:Name="catsitterPhoto" Source="{Binding Catsitter.PathPhoto}" Aspect="AspectFill" HeightRequest="250"></Image>
             <StackLayout Orientation="Vertical">
-                <Label Text="О себе"  TextColor="black"></Label>
-                <Label x:Name="info" BackgroundColor="#dbdbdb" Text="{Binding Catsitter.Info}"/>
+                <Label Text="О себе" FontSize="Large"></Label>
+                <Label x:Name="info" Text="{Binding Catsitter.Info}"/>
             </StackLayout>
 
-            <StackLayout Orientation="Horizontal" >
-                <StackLayout Orientation="Vertical">
-                    <Label Text="Дети до 10 лет"  TextColor="black"></Label>
-                    <Label x:Name="childLabel"  TextColor="black"></Label>
+            <StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Дети до 10 лет" HorizontalOptions="StartAndExpand" FontSize="Large"></Label>
+                    <Label x:Name="childLabel" HorizontalOptions="End" VerticalOptions="CenterAndExpand"></Label>
                 </StackLayout>
             </StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <StackLayout Orientation="Vertical">
-                    <Label Text="Тип жилья"  TextColor="black"></Label>
-                    <Label x:Name="housingLabel" WidthRequest="120">
-                    </Label>
+            <StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Тип жилья" HorizontalOptions="StartAndExpand" FontSize="Large"></Label>
+                    <Label x:Name="housingLabel" HorizontalOptions="End" VerticalOptions="CenterAndExpand"></Label>
                 </StackLayout>
             </StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <StackLayout Orientation="Vertical">
-                    <Label Text="Опыт ухода за кошками"  TextColor="black"></Label>
-                    <Picker x:Name="pickerYears" SelectedIndex="{Binding Catsitter.PracYears}"></Picker>
+            <StackLayout >
+                <Label HorizontalOptions="CenterAndExpand" Text="Опыт ухода за кошками" FontSize="Large"></Label>
+                <StackLayout Spacing="5">
+                    <StackLayout Orientation="Horizontal">
+                        <Image x:Name="pracPhoto" Source="done.png" WidthRequest="30" HeightRequest="40"></Image>
+                        <Label Text="Опыт ухода за кошками"></Label>
+                        <Label x:Name="pickerYears" Text="{Binding Catsitter.PracYears}"></Label>
+                        <Label Text="лет"></Label>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Image x:Name="medPhoto"  WidthRequest="30" HeightRequest="40"></Image>
+                        <Label x:Name="isMedicine"></Label>
+                        <Label Text="давать лекарства"></Label>
+                    </StackLayout>
                 </StackLayout>
+               
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

@@ -20,8 +20,7 @@ namespace MobileAppGroup4.SQLite
         public string Info { get; set; }
         public Boolean Child { get; set; }
         public Boolean Medicines { get; set; }
-
+        public string PathPhoto { get; set; }
         public int IdUser { get; set; }
-        public Boolean IsAdd { get; set; }
     }
 }

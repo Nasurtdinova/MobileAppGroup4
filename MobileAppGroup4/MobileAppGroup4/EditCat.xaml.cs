@@ -49,16 +49,16 @@ namespace MobileAppGroup4
             }
         }
 
-        private async void SaveProject(object sender, EventArgs e)
+        private async void SaveCat(object sender, EventArgs e)
         {
-            var project = (Cat)BindingContext;
-            project.IsFriendly = friendly.IsToggled;
-            project.PhotoPath = pathName;
-            if (await DisplayAlert(" ", $"Вы хотите изменить {project.Name}?", "Изменить", "Отмена"))
+            var cat = (Cat)BindingContext;
+            cat.IsFriendly = friendly.IsToggled;
+            cat.PhotoPath = pathName;
+            if (await DisplayAlert(" ", $"Вы хотите изменить {cat.Name}?", "Изменить", "Отмена"))
             {
-                if (!String.IsNullOrEmpty(project.Name))
+                if (!String.IsNullOrEmpty(cat.Name))
                 {
-                    App.Database.SaveCat(project);
+                    App.Database.SaveCat(cat);
                 }
                 await this.Navigation.PopAsync();
             }

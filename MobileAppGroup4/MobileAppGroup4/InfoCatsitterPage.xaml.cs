@@ -19,12 +19,24 @@ namespace MobileAppGroup4
             InitializeComponent();
             Catsitter = catsit;
             housingLabel.Text = Catsitter.Housing.ToString();
-            this.BindingContext = this;
+            if (Catsitter.Medicines)
+            {
+                isMedicine.Text = "Может";
+                medPhoto.Source = "done.png";
+            }
+            else
+            {
+                isMedicine.Text = "Не может";
+                medPhoto.Source = "not.png";
+            }
+
             if (Catsitter.Child)
                 childLabel.Text = "Да";
             else
                 childLabel.Text = "Нет";
-            
+
+            this.BindingContext = this;
+
         }
     }
 }

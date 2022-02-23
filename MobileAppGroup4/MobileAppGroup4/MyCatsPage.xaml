@@ -20,12 +20,12 @@
                                     <Image x:Name="catPhoto" Source="{Binding PhotoPath}" WidthRequest="45" HeightRequest="60"></Image>
                                     <StackLayout Orientation="Vertical" Spacing="-5">
                                         <StackLayout Orientation="Horizontal">
-                                            <Label Text="Name:" TextColor="Black" />
-                                            <Label Text="{Binding Name}" TextColor="Black"/>
+                                            <Label Text="Name:"/>
+                                            <Label Text="{Binding Name}"/>
                                         </StackLayout>
                                         <StackLayout Orientation="Horizontal">
-                                            <Label Text="Breed:" TextColor="Black"/>
-                                            <Label Text="{Binding Breed}" TextColor="Black"/>
+                                            <Label Text="Breed:"/>
+                                            <Label Text="{Binding Breed}"/>
                                         </StackLayout>
                                     </StackLayout>
 

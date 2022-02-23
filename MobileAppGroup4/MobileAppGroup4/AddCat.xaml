@@ -40,7 +40,6 @@
                     </StackLayout>
                     <StackLayout>
                         <Label Text="Загрузите фото (необязательно)"  TextColor="black"></Label>
-                        
                         <StackLayout VerticalOptions="EndAndExpand" Orientation="Horizontal">
                             <Button Clicked="GetPhotoAsync" Text="Галерея" HorizontalOptions="FillAndExpand"/>
                             <Button Clicked="TakePhotoAsync" Text="Камера" HorizontalOptions="FillAndExpand"/>

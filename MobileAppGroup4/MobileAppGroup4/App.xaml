@@ -23,6 +23,7 @@
         <Style TargetType="Label">
             <Setter Property="FontSize" Value="Medium"></Setter>
             <Setter Property="FontFamily" Value="Radley"></Setter>
+            <Setter Property="TextColor" Value="Black"></Setter>        
         </Style>
         <Style TargetType="Shell">
             <Setter Property="BackgroundColor" Value="#B4A390"></Setter>

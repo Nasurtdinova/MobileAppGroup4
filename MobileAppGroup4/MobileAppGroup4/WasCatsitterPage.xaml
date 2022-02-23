@@ -13,37 +13,44 @@
                 <StackLayout>
                     <StackLayout Spacing="20" >
                         <StackLayout>
-                            <Label Text="Имя"  TextColor="black"></Label>
+                            <Label Text="Имя"></Label>
                             <Entry x:Name="nameCattsiter"  Text="{Binding Catsitter.Name}"/>
                         </StackLayout>
                         <StackLayout>
-                            <Label Text="Фамилия"  TextColor="black"></Label>
+                            <Label Text="Фамилия"></Label>
                             <Entry x:Name="surnameCattsiter" Text="{Binding Catsitter.Surname}"/>
                         </StackLayout>
                         <StackLayout>
-                            <Label Text="Дата рождения"  TextColor="black"></Label>
+                            <Label Text="Дата рождения"></Label>
                             <DatePicker x:Name="birthdayDate" Date="{Binding Catsitter.birthdayDate}"/>
                         </StackLayout>
                         <StackLayout>
-                            <Label Text="Номер телефона"  TextColor="black"></Label>
+                            <Label Text="Номер телефона"></Label>
                             <Entry x:Name="phoneNumber" Text="{Binding Catsitter.Phone}"/>
                         </StackLayout>
                         <StackLayout>
                             <StackLayout Orientation="Vertical">
-                                <Label Text="Адрес"  TextColor="black"></Label>
+                                <Label Text="Адрес"></Label>
                                 <Editor x:Name="address" BackgroundColor="#dbdbdb" Text="{Binding Catsitter.Address}"/>
                             </StackLayout>
                         </StackLayout>
                         <StackLayout>
+                            <Label Text="Загрузите фото (необязательно)"></Label>
+                            <StackLayout VerticalOptions="EndAndExpand" Orientation="Horizontal">
+                                <Button Clicked="GetPhotoAsync" Text="Галерея" HorizontalOptions="FillAndExpand"/>
+                                <Button Clicked="TakePhotoAsync" Text="Камера" HorizontalOptions="FillAndExpand"/>
+                            </StackLayout>
+                        </StackLayout>
+                        <StackLayout>
                             <StackLayout Orientation="Vertical">
-                                <Label Text="О себе"  TextColor="black"></Label>
+                                <Label Text="О себе"></Label>
                                 <Editor x:Name="info" BackgroundColor="#dbdbdb" Text="{Binding Catsitter.Info}"/>
                             </StackLayout>
                         </StackLayout>
                         <StackLayout>
                             <StackLayout Orientation="Horizontal">
                                 <StackLayout Orientation="Vertical">
-                                    <Label Text="Тип жилья"  TextColor="black"></Label>
+                                    <Label Text="Тип жилья"></Label>
                                     <Picker x:Name="pickerHousing" WidthRequest="120" SelectedIndex="{Binding Catsitter.Housing}">
                                         <Picker.Items>
                                             <x:String>Квартира</x:String >
@@ -56,21 +63,21 @@
                         <StackLayout>
                             <StackLayout Orientation="Horizontal">
                                 <StackLayout Orientation="Vertical">
-                                    <Label Text="Опыт ухода"  TextColor="black"></Label>
+                                    <Label Text="Опыт ухода"></Label>
                                     <Picker x:Name="pickerYears" SelectedIndex="{Binding Catsitter.PracYears}"></Picker>
                                 </StackLayout>
                             </StackLayout>
                         </StackLayout>
                         <StackLayout Orientation="Horizontal" >
                             <StackLayout Orientation="Vertical">
-                                <Label Text="Дети до 10 лет"  TextColor="black"></Label>
+                                <Label Text="Дети до 10 лет"></Label>
                                 <StackLayout Orientation="Horizontal">
                                     <StackLayout Orientation="Horizontal">
-                                        <Label Text="Да"  TextColor="black"></Label>
+                                        <Label Text="Да"></Label>
                                         <Switch x:Name="child" Toggled="child_Toggled"/>
                                     </StackLayout>
                                     <StackLayout Orientation="Horizontal">
-                                        <Label Text="Нет"  TextColor="black"></Label>
+                                        <Label Text="Нет"></Label>
                                         <Switch x:Name="noChild" Toggled="noChild_Toggled"/>
                                     </StackLayout>
                                 </StackLayout>
@@ -78,14 +85,14 @@
                         </StackLayout>
                         <StackLayout Orientation="Horizontal">
                             <StackLayout Orientation="Vertical">
-                                <Label Text="Можете давать лекарства"  TextColor="black"></Label>
+                                <Label Text="Можете давать лекарства"></Label>
                                 <StackLayout Orientation="Horizontal" >
                                     <StackLayout Orientation="Horizontal">
-                                        <Label Text="Да"  TextColor="black"></Label>
+                                        <Label Text="Да"></Label>
                                         <Switch x:Name="medicines" Toggled="medicines_Toggled"/>
                                     </StackLayout>
                                     <StackLayout Orientation="Horizontal">
-                                        <Label Text="Нет"  TextColor="black"></Label>
+                                        <Label Text="Нет"></Label>
                                         <Switch x:Name="noMedicines" Toggled="noMedicines_Toggled"/>
                                     </StackLayout>
                                 </StackLayout>
