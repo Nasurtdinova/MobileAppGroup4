@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileAppGroup4.ViewRequestPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem>
+            <ToolbarItem.IconImageSource>
+                <FontImageSource FontFamily="Font" Glyph="&#xe16c;"/>
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="20" Spacing="20">
+                <StackLayout Spacing="20" >
+                    <StackLayout>
+                        <Label Text="Дата"></Label>
+                        <Label Text="{Binding Date}"/>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout Spacing="20" >
+                    <StackLayout>
+                        <Label Text="Имя"></Label>
+                        <Label Text="{Binding NameUser}"/>
+                    </StackLayout>
+                    <StackLayout>
+                        <Label Text="Номер телефона"></Label>
+                        <Label Text="{Binding PhoneNumber}"/>
+                    </StackLayout>
+                    <StackLayout>
+                        <Label Text="Сообщение"></Label>
+                        <Label Text="{Binding Message}"/>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout VerticalOptions="EndAndExpand" Orientation="Horizontal">
+                    <Button Text="Игнорировать" Clicked="Ignor" HorizontalOptions="FillAndExpand"/>
+                    <Button Text="Принять" Clicked="Accept" HorizontalOptions="FillAndExpand"/>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

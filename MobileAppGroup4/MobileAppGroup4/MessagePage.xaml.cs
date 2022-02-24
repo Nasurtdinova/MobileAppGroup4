@@ -25,5 +25,12 @@ namespace MobileAppGroup4
             messagesList.ItemsSource = App.Database.GetRequestCatsitter(Catsitter.Id);
             base.OnAppearing();
         }
+        private async void messagesList_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            Request selectedProject = (Request)e.SelectedItem;
+            ViewRequestPage projectPage = new ViewRequestPage(selectedProject);
+            projectPage.BindingContext = selectedProject;
+            await Navigation.PushAsync(projectPage);
+        }
     }
 }

@@ -4,7 +4,7 @@
              x:Class="MobileAppGroup4.MessagePage" Title="Сообщения">
     <ContentPage.Content>
         <StackLayout>
-            <ListView x:Name="messagesList" SeparatorColor="Black" ItemsSource="{Binding}">
+            <ListView x:Name="messagesList" SeparatorColor="Black" ItemsSource="{Binding}" ItemSelected="messagesList_ItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
