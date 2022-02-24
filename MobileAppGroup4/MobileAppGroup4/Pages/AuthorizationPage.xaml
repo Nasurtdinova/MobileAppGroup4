@@ -13,11 +13,11 @@
             </StackLayout>
             <StackLayout Spacing="30" >
                 <StackLayout>
-                    <Label Text="Email"  TextColor="black" FontSize="Large"></Label>
-                    <Entry x:Name="loginEntry"/>
+                    <Label Text="Email" FontSize="Large"></Label>
+                    <Entry x:Name="loginEntry" Keyboard="Email"/>
                 </StackLayout>
                 <StackLayout>
-                    <Label Text="Password" TextColor="black" FontSize="Large"></Label>
+                    <Label Text="Password" FontSize="Large"></Label>
                     <Entry x:Name="passwordEntry" IsPassword ="True" />
                 </StackLayout>
             </StackLayout>

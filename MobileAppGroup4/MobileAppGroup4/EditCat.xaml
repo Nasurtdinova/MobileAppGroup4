@@ -11,7 +11,7 @@
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout Padding="20" Spacing="20">
+            <StackLayout Padding="20">
                 <StackLayout Spacing="20">
                     <StackLayout>
                         <Label Text="Имя котика"></Label>
@@ -51,6 +51,7 @@
                     </StackLayout>
                     <StackLayout>
                         <Label Text="Загрузите фото (необязательно)"></Label>
+                        <Image x:Name="catPhoto" Source="{Binding PhotoPath}" Aspect="Fill" HeightRequest="250"></Image>
                         <StackLayout VerticalOptions="EndAndExpand" Orientation="Horizontal">
                             <Button Clicked="GetPhotoAsync" Text="Галерея" HorizontalOptions="FillAndExpand"/>
                             <Button Clicked="TakePhotoAsync" Text="Камера" HorizontalOptions="FillAndExpand"/>

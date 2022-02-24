@@ -69,6 +69,12 @@ namespace MobileAppGroup4
             this.Navigation.PopAsync();
         }
 
+        private void UpdateList()
+        {
+            catPhoto.Source = pathName;
+            this.BindingContext = this;
+        }
+
         private void men_Toggled(object sender, ToggledEventArgs e)
         {
             woman.IsToggled = false;
@@ -90,6 +96,7 @@ namespace MobileAppGroup4
             {
                 await DisplayAlert("Сообщение об ошибке", ex.Message, "OK");
             }
+            UpdateList();
         }
 
         private async void TakePhotoAsync(object sender, EventArgs e)
@@ -114,6 +121,7 @@ namespace MobileAppGroup4
             {
                 await DisplayAlert("Сообщение об ошибке", ex.Message, "OK");
             }
+            UpdateList();
         }
 
         private void friendly_Toggled(object sender, ToggledEventArgs e)

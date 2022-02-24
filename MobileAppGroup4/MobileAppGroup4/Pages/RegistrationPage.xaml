@@ -9,23 +9,23 @@
         <StackLayout Padding="30" Spacing="40">
             <StackLayout  Spacing="10">
                 <StackLayout>
-                    <Label Text="Name"  TextColor="black" FontSize="Large"></Label>
+                    <Label Text="Name" FontSize="Large"></Label>
                     <Entry x:Name="nameEntry"/>
                 </StackLayout>
                 <StackLayout>
-                    <Label Text="Surname"  TextColor="black" FontSize="Large"></Label>
+                    <Label Text="Surname" FontSize="Large"></Label>
                     <Entry x:Name="surnameEntry" Keyboard="Text"/>
                 </StackLayout>
                 <StackLayout>
-                    <Label Text="Email"  TextColor="black" FontSize="Large"></Label>
+                    <Label Text="Email" FontSize="Large"></Label>
                     <Entry x:Name="emailEntry" Keyboard="Email"/>
                 </StackLayout>
                 <StackLayout>
-                    <Label Text="Password"  TextColor="black" FontSize="Large"></Label>
+                    <Label Text="Password" FontSize="Large"></Label>
                     <Entry x:Name="passwordEntry" IsPassword ="True"/>
                 </StackLayout>
                 <StackLayout>
-                    <Label Text="Confirm password"  TextColor="black" FontSize="Large"></Label>
+                    <Label Text="Confirm password" FontSize="Large"></Label>
                     <Entry x:Name="password2Entry" IsPassword ="True"/>
                 </StackLayout>
             </StackLayout>
