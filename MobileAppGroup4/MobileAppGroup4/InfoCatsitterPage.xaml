@@ -43,6 +43,9 @@
                 </StackLayout>
                
             </StackLayout>
+            <StackLayout VerticalOptions="EndAndExpand" Orientation="Horizontal">
+                <Button Text="Отправить запрос" HorizontalOptions="FillAndExpand" Clicked="send_Request"/>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

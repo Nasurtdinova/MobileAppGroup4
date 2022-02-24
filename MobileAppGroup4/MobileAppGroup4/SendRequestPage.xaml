@@ -4,9 +4,67 @@
              x:Class="MobileAppGroup4.SendRequestPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <ScrollView>
+                <StackLayout Padding="20" Spacing="20">
+                    <StackLayout Spacing="20" >
+                        <StackLayout>
+                            <Label Text="Когда вы хотите оставить котика?"></Label>
+                            <DatePicker x:Name="transferDate" />
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout Spacing="20" >
+                        <StackLayout>
+                            <Label Text="Ваше имя"></Label>
+                            <Entry Text="{Binding Name}" x:Name="nameCatsitter" />
+                        </StackLayout>
+                        <StackLayout>
+                            <Label Text="Ваше фамилия"></Label>
+                            <Entry Text="{Binding Surname}" x:Name="surnameCatsitter" />
+                        </StackLayout>
+                        <StackLayout>
+                            <Label Text="Номер телефона"></Label>
+                            <Entry Text="{Binding Number}" x:Name="numberCatsitter" />
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout>
+                        <StackLayout Orientation="Vertical">
+                            <Label Text="Сообщение для кэтситтера"></Label>
+                            <Editor x:Name="info" BackgroundColor="#dbdbdb"/>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout Spacing="20">
+                        <Label Text="Ваши котики" FontSize="24" HorizontalTextAlignment="Center"></Label>
+                        <ListView x:Name="catsList" SeparatorColor="Black" ItemsSource="{Binding}" ItemSelected="catsList_ItemSelected" WidthRequest="80">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <ViewCell.View>
+                                            <StackLayout  Orientation="Horizontal">
+                                                <Image x:Name="catPhoto" Source="{Binding PhotoPath}" WidthRequest="45" HeightRequest="60"></Image>
+                                                <StackLayout Orientation="Vertical" Spacing="-5">
+                                                    <StackLayout Orientation="Horizontal">
+                                                        <Label Text="Name:" />
+                                                        <Label Text="{Binding Name}"/>
+                                                    </StackLayout>
+                                                    <StackLayout Orientation="Horizontal">
+                                                        <Label Text="Breed:"/>
+                                                        <Label Text="{Binding Breed}"/>
+                                                    </StackLayout>
+                                                </StackLayout>
+                                            </StackLayout>
+                                        </ViewCell.View>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackLayout>
+
+                </StackLayout>
+            </ScrollView>
+            <StackLayout VerticalOptions="EndAndExpand" Orientation="Horizontal">
+                <Button Text="Отмена" Clicked="Cancel" HorizontalOptions="FillAndExpand"/>
+                <Button Text="Отправить" HorizontalOptions="FillAndExpand" Clicked="add_Request"/>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

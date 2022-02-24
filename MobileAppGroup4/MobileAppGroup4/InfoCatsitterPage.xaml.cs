@@ -38,5 +38,9 @@ namespace MobileAppGroup4
             this.BindingContext = this;
 
         }
+        private async void send_Request(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new SendRequestPage(Catsitter.Id));
+        }
     }
 }
