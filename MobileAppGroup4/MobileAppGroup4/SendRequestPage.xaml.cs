@@ -13,16 +13,18 @@ namespace MobileAppGroup4
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SendRequestPage : ContentPage
     {
-        public int idUser { get; set; }
-        public SendRequestPage(int id)
+        public int idCatsitter { get; set; }
+        public int IdUser { get; set; }
+        public SendRequestPage(int id,int idUser)
         {
             InitializeComponent();
-            idUser = id;
+            idCatsitter = id;
+            IdUser = idUser;
             this.BindingContext = this;
         }
         protected override void OnAppearing()
         {
-            catsList.ItemsSource = App.Database.GetCatsId(idUser);
+            catsList.ItemsSource = App.Database.GetCatsId(IdUser);
             base.OnAppearing();
         }
 

@@ -14,10 +14,12 @@ namespace MobileAppGroup4
     public partial class InfoCatsitterPage : ContentPage
     {
         public Catsitter Catsitter { get; set; }
-        public InfoCatsitterPage(Catsitter catsit)
+        public int IdUser { get; set; }
+        public InfoCatsitterPage(Catsitter catsit, int idUser)
         {
             InitializeComponent();
             Catsitter = catsit;
+            IdUser = idUser;
             housingLabel.Text = Catsitter.Housing.ToString();
             if (Catsitter.Medicines)
             {
@@ -40,7 +42,7 @@ namespace MobileAppGroup4
         }
         private async void send_Request(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new SendRequestPage(Catsitter.Id));
+            await Navigation.PushAsync(new SendRequestPage(Catsitter.Id,IdUser));
         }
     }
 }

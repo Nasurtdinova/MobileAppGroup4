@@ -31,7 +31,7 @@ namespace MobileAppGroup4
         private async void catsittersList_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             Catsitter selectedProject = (Catsitter)e.SelectedItem;
-            await Navigation.PushAsync(new InfoCatsitterPage(selectedProject));
+            await Navigation.PushAsync(new InfoCatsitterPage(selectedProject, idUser));
         }
     }
 }
