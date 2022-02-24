@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MobileAppGroup4.SendRequestPage" Title="Запрос">
+             x:Class="MobileAppGroup4.SendRequestPage" Title="Запрос" Visual="Material">
     <ContentPage.Content>
         <StackLayout>
             <ScrollView>
@@ -15,21 +15,21 @@
                     <StackLayout Spacing="20" >
                         <StackLayout>
                             <Label Text="Ваше имя"></Label>
-                            <Entry Text="{Binding Name}" x:Name="nameCatsitter" />
+                            <Entry Text="{Binding User.Name}" x:Name="nameCatsitter" />
                         </StackLayout>
                         <StackLayout>
                             <Label Text="Ваше фамилия"></Label>
-                            <Entry Text="{Binding Surname}" x:Name="surnameCatsitter" />
+                            <Entry Text="{Binding User.Surname}" x:Name="surnameCatsitter" />
                         </StackLayout>
                         <StackLayout>
                             <Label Text="Номер телефона"></Label>
-                            <Entry Text="{Binding Number}" x:Name="numberCatsitter" />
+                            <Entry x:Name="phoneNumber" />
                         </StackLayout>
                     </StackLayout>
                     <StackLayout>
                         <StackLayout Orientation="Vertical">
                             <Label Text="Сообщение для кэтситтера"></Label>
-                            <Editor x:Name="info" BackgroundColor="#dbdbdb"/>
+                            <Editor x:Name="message" BackgroundColor="#dbdbdb"/>
                         </StackLayout>
                     </StackLayout>
                     <StackLayout Spacing="20">

@@ -13,25 +13,25 @@ namespace MobileAppGroup4
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class CatsittersPage : ContentPage
     {
-        public int idUser { get; set; }
-        public CatsittersPage(int id)
+        public int IdUser { get; set; }
+        public CatsittersPage(int idUser)
         {
             InitializeComponent();
-            idUser = id;
-            catsittersList.ItemsSource = App.Database.GetCatsittersId(id);
+            IdUser = idUser;
+            catsittersList.ItemsSource = App.Database.GetCatsittersId(idUser);
             this.BindingContext = this;
         }
 
         protected override void OnAppearing()
         {
-            catsittersList.ItemsSource = App.Database.GetCatsittersId(idUser);
+            catsittersList.ItemsSource = App.Database.GetCatsittersId(IdUser);
             base.OnAppearing();
         }
 
         private async void catsittersList_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             Catsitter selectedProject = (Catsitter)e.SelectedItem;
-            await Navigation.PushAsync(new InfoCatsitterPage(selectedProject, idUser));
+            await Navigation.PushAsync(new InfoCatsitterPage(selectedProject, IdUser));
         }
     }
 }

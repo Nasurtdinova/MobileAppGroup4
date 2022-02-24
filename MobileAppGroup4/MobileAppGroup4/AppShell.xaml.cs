@@ -25,6 +25,10 @@ namespace MobileAppGroup4
         {
             await Navigation.PushAsync(new MyCatsPage(Iuser.Id));
         }
+        private async void messages_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new MessagePage(Iuser.Id));
+        }
         private void becomeCatsitter_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new BecomeCatsitterPage(Iuser));           

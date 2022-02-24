@@ -17,6 +17,7 @@
     <FlyoutItem Title="Main page" Icon="iconShell.png">
         <ShellContent ContentTemplate="{DataTemplate pages:InfoPage}"/>
     </FlyoutItem>
+    <MenuItem Text="Messages" Clicked="messages_Clicked" IconImageSource="MyCats.jpg" />
     <MenuItem Text="My cats" Clicked="myCats_Clicked" IconImageSource="MyCats.jpg" />
     <MenuItem Text="Become catsitter" Clicked="becomeCatsitter_Clicked" IconImageSource="becomeCatsitter.jpg" />
     <MenuItem Text="Catsitters" Clicked="catsitters_Clicked"  IconImageSource="Catsitter.jpg" />

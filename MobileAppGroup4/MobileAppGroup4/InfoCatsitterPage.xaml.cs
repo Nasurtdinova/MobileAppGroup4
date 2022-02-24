@@ -42,7 +42,11 @@ namespace MobileAppGroup4
         }
         private async void send_Request(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new SendRequestPage(Catsitter.Id,IdUser));
+            //App.Database.DeleteRequest(1);
+            if (App.Database.GetRequestIdUser(IdUser) == null)
+                await Navigation.PushAsync(new SendRequestPage(Catsitter.Id, IdUser));
+            else
+                await DisplayAlert("Ошибка", "Вы уже отправили запрос", "Закрыть");
         }
     }
 }

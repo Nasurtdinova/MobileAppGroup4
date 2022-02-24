@@ -14,6 +14,7 @@ namespace MobileAppGroup4.SQLite
             database.CreateTable<User>();
             database.CreateTable<Catsitter>();
             database.CreateTable<Cat>();
+            database.CreateTable<Request>();
         }
         public IEnumerable<Cat> GetCats()
         {
@@ -100,6 +101,39 @@ namespace MobileAppGroup4.SQLite
             {
                 return database.Insert(item);
             }
+        }
+
+        public IEnumerable<Request> GetRequests()
+        {
+            return database.Table<Request>().ToList();
+        }
+        public Request GetRequest(int id)
+        {
+            return database.Get<Request>(id);
+        }
+        public Request GetRequestIdUser(int id)
+        {
+            return database.Table<Request>().Where(a=>a.IdUser==id).FirstOrDefault();
+        }
+        public int DeleteRequest(int id)
+        {
+            return database.Delete<Request>(id);
+        }
+        public int SaveRequest(Request item)
+        {
+            if (item.IdRequest != 0)
+            {
+                database.Update(item);
+                return item.IdRequest;
+            }
+            else
+            {
+                return database.Insert(item);
+            }
+        }
+        public IEnumerable<Request> GetRequestCatsitter(int id)
+        {
+            return database.Table<Request>().Where(a => a.IdCatsitter == id);
         }
     }
 }

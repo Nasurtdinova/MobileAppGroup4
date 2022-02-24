@@ -13,13 +13,16 @@ namespace MobileAppGroup4
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SendRequestPage : ContentPage
     {
-        public int idCatsitter { get; set; }
+        public int IdCatsitter { get; set; }
         public int IdUser { get; set; }
+        public int IdCat { get; set; }
+        public User User { get; set; }
         public SendRequestPage(int id,int idUser)
         {
             InitializeComponent();
-            idCatsitter = id;
+            IdCatsitter = id;
             IdUser = idUser;
+            User = App.Database.GetUser(idUser);
             this.BindingContext = this;
         }
         protected override void OnAppearing()
@@ -28,22 +31,32 @@ namespace MobileAppGroup4
             base.OnAppearing();
         }
 
-        private async void catsList_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        private void catsList_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            Cat selectedProject = (Cat)e.SelectedItem;
-            EditCat projectPage = new EditCat(selectedProject);
-            projectPage.BindingContext = selectedProject;
-            await Navigation.PushAsync(projectPage);
+            Cat selectedCat = (Cat)e.SelectedItem;
+            IdCat = selectedCat.Id;
         }
 
         private void add_Request(object sender, EventArgs e)
         {
-
+            Request request = new Request()
+            {
+                IdUser = IdUser,
+                IdCatsitter = IdCatsitter,
+                IdCat = IdCat,
+                NameCatsitter = App.Database.GetCatsitter(IdCatsitter).Name,
+                NameUser = User.Name,
+                Date = transferDate.Date,
+                Message = message.Text,
+                PhoneNumber = Convert.ToInt64(phoneNumber.Text)
+            };
+            App.Database.SaveRequest(request);
+            Navigation.PushAsync(new CatsittersPage(IdUser));
         }
 
         private void Cancel(object sender, EventArgs e)
         {
-
+            this.Navigation.PopAsync();
         }
     }
 }
