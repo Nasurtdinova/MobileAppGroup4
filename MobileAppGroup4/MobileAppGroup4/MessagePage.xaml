@@ -8,18 +8,16 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <ViewCell.View>
-                                <StackLayout  Orientation="Horizontal">
-                                    <StackLayout  Orientation="Vertical">
-                                            <Label Text="Вам пользователь"/>
-                                            <Label Text="{Binding NameUser}"/>
-                                        </StackLayout>
-                                        <StackLayout  Orientation="Horizontal">
-                                            <Label Text="отправил запрос на дату"/>
-                                        <Label Text="{Binding Date}"/>
-                                    </StackLayout>
+                            <StackLayout  Orientation="Horizontal">
+                                <StackLayout  Orientation="Vertical">
+                                    <Label Text="Вам пользователь"/>
+                                    <Label Text="{Binding NameUser}"/>
                                 </StackLayout>
-                            </ViewCell.View>
+                                <StackLayout  Orientation="Horizontal">
+                                    <Label Text="отправил запрос на дату"/>
+                                    <Label Text="{Binding Date}"/>
+                                </StackLayout>
+                            </StackLayout>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>

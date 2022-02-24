@@ -24,19 +24,23 @@ namespace MobileAppGroup4
         private async void myCats_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new MyCatsPage(Iuser.Id));
+            Shell.Current.FlyoutIsPresented = false;
         }
         private async void messages_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new MessagePage(Iuser.Id));
+            Shell.Current.FlyoutIsPresented = false;
         }
         private void becomeCatsitter_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new BecomeCatsitterPage(Iuser));           
+            Navigation.PushAsync(new BecomeCatsitterPage(Iuser));
+            Shell.Current.FlyoutIsPresented = false;
         }
 
         private void catsitters_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new CatsittersPage(Iuser.Id));
+            Shell.Current.FlyoutIsPresented = false;
         }
         private void exit_Clicked(object sender, EventArgs e)
         {
