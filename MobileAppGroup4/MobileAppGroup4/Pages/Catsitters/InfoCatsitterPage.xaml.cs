@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -46,7 +45,6 @@ namespace MobileAppGroup4
         }
         private async void send_Request(object sender, EventArgs e)
         {
-            //App.Database.DeleteRequest(1);
             if (App.Database.GetRequestIdUser(IdUser,Catsitter.Id) == null)
                 await Navigation.PushAsync(new SendRequestPage(Catsitter.Id, IdUser));
             else

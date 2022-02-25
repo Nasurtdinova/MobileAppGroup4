@@ -46,7 +46,7 @@ namespace MobileAppGroup4
         private async void messagesList_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             Request selectedRequest = (Request)e.SelectedItem;
-            if (await DisplayAlert("Уведомление", $"Пользователь хочет оставить кота {App.Database.GetCat(selectedRequest.IdCat)} {selectedRequest.Date}. Он оставил вам сообщение: '{selectedRequest.Message}' и номер телефона {selectedRequest.PhoneNumber}. Вы хотите принять запрос от {selectedRequest.NameUser}?", "Принять", "Отклонить"))
+            if (await DisplayAlert("Уведомление", $"Пользователь {selectedRequest.NameUser} хочет оставить кота {App.Database.GetCat(selectedRequest.IdCat).Name} {selectedRequest.Date.ToShortDateString()}. Он оставил вам сообщение: '{selectedRequest.Message}' и номер телефона {selectedRequest.PhoneNumber}. Вы хотите принять запрос от {selectedRequest.NameUser}?", "Принять", "Отклонить"))
             {
                 AcceptedNoAcceptedRequest accept = new AcceptedNoAcceptedRequest()
                 {

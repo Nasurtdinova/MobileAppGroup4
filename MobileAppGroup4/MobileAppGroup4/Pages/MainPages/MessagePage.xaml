@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileAppGroup4.MessagePage" Title="Сообщения">
+    <ContentPage.Content>
+        <StackLayout Padding="10">
+                <StackLayout Spacing="30">
+                    <Label Text="Входящие запросы" HorizontalOptions="CenterAndExpand" FontSize="20"></Label>
+                    <ListView x:Name="messagesList" SeparatorColor="Black" ItemsSource="{Binding}" ItemSelected="messagesList_ItemSelected">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout  Orientation="Horizontal">
+                                        <Label Text="Пользователь"/>
+                                        <Label Text="{Binding NameUser}"/>
+                                        <Label Text="отправил запрос"/>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Сообщения от котситтеров" HorizontalOptions="CenterAndExpand" FontSize="20"></Label>
+                    <ListView x:Name="acceptMessagesList" SeparatorColor="Black" ItemsSource="{Binding}" ItemSelected="acceptMessagesList_ItemSelected">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout  Orientation="Horizontal">
+                                        <Label Text="Кэтситтер"/>
+                                        <Label Text="{Binding NameCatsitter}"/>
+                                        <Label Text="{Binding Event}"/>
+                                        <Label Text="запрос"/>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

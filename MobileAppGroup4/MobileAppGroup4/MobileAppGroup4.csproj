@@ -22,52 +22,55 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="AddCatPage.xaml.cs">
+    <Compile Update="Pages\Cats\AddCatPage.xaml.cs">
       <DependentUpon>AddCatPage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Pages\AuthorizationPage.xaml.cs">
+    <Compile Update="Pages\Cats\EditCatPage.xaml.cs">
+      <DependentUpon>EditCatPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Pages\MainPages\AuthorizationPage.xaml.cs">
       <DependentUpon>AuthorizationPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="AddCatPage.xaml">
+    <EmbeddedResource Update="Pages\Cats\AddCatPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="AppShell.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="BecomeCatsitterPage.xaml">
+    <EmbeddedResource Update="Pages\Catsitters\BecomeCatsitterPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="CatsittersPage.xaml">
+    <EmbeddedResource Update="Pages\Catsitters\CatsittersPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="EditCat.xaml">
+    <EmbeddedResource Update="Pages\Cats\EditCatPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="InfoCatsitterPage.xaml">
+    <EmbeddedResource Update="Pages\Catsitters\InfoCatsitterPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="InfoPage.xaml">
+    <EmbeddedResource Update="Pages\MainPages\InfoPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="MessagePage.xaml">
+    <EmbeddedResource Update="Pages\MainPages\MessagePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="MyCatsPage.xaml">
+    <EmbeddedResource Update="Pages\Cats\MyCatsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Pages\AuthorizationPage.xaml">
+    <EmbeddedResource Update="Pages\MainPages\AuthorizationPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Pages\RegistrationPage.xaml">
+    <EmbeddedResource Update="Pages\MainPages\RegistrationPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="SendRequestPage.xaml">
+    <EmbeddedResource Update="Pages\Catsitters\SendRequestPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="WasCatsitterPage.xaml">
+    <EmbeddedResource Update="Pages\Catsitters\WasCatsitterPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
