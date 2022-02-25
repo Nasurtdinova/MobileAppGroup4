@@ -66,7 +66,6 @@ namespace MobileAppGroup4
             {
                 await DisplayAlert("Сообщение об ошибке", ex.Message, "OK");
             }
-            //UpdateList();
         }
 
         private async void TakePhotoAsync(object sender, EventArgs e)
@@ -91,7 +90,6 @@ namespace MobileAppGroup4
             {
                 await DisplayAlert("Сообщение об ошибке", ex.Message, "OK");
             }
-            //UpdateList();
         }
 
         private async void become_Clicked(object sender, EventArgs e)

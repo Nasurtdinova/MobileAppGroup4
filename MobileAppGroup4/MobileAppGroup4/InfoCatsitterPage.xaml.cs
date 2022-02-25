@@ -20,7 +20,11 @@ namespace MobileAppGroup4
             InitializeComponent();
             Catsitter = catsit;
             IdUser = idUser;
-            housingLabel.Text = Catsitter.Housing.ToString();
+            if (Catsitter.Housing == "1")
+                housingLabel.Text = "Дом";
+            else
+                housingLabel.Text = "Квартира";
+
             if (Catsitter.Medicines)
             {
                 isMedicine.Text = "Может";
