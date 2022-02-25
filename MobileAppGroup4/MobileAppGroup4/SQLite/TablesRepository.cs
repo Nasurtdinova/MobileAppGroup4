@@ -15,6 +15,7 @@ namespace MobileAppGroup4.SQLite
             database.CreateTable<Catsitter>();
             database.CreateTable<Cat>();
             database.CreateTable<Request>();
+            database.CreateTable<AcceptedNoAcceptedRequest>();
         }
         public IEnumerable<Cat> GetCats()
         {
@@ -111,9 +112,9 @@ namespace MobileAppGroup4.SQLite
         {
             return database.Get<Request>(id);
         }
-        public Request GetRequestIdUser(int id)
+        public Request GetRequestIdUser(int idUser,int idCatsitter)
         {
-            return database.Table<Request>().Where(a=>a.IdUser==id).FirstOrDefault();
+            return database.Table<Request>().Where(a=>a.IdUser==idUser && a.IdCatsitter == idCatsitter).FirstOrDefault();
         }
         public int DeleteRequest(int id)
         {
@@ -134,6 +135,37 @@ namespace MobileAppGroup4.SQLite
         public IEnumerable<Request> GetRequestCatsitter(int id)
         {
             return database.Table<Request>().Where(a => a.IdCatsitter == id);
+        }
+
+        public IEnumerable<AcceptedNoAcceptedRequest> GetAcceptedRequests()
+        {
+            return database.Table<AcceptedNoAcceptedRequest>().ToList();
+        }
+        public AcceptedNoAcceptedRequest GetAcceptedRequest(int id)
+        {
+            return database.Get<AcceptedNoAcceptedRequest>(id);
+        }
+
+        public int SaveAcceptedRequest(AcceptedNoAcceptedRequest item)
+        {
+            if (item.IdAcceptedRequest != 0)
+            {
+                database.Update(item);
+                return item.IdRequest;
+            }
+            else
+            {
+                return database.Insert(item);
+            }
+        }
+        public IEnumerable<AcceptedNoAcceptedRequest> GetAcceptRequestUser(int idUser)
+        {
+            return database.Table<AcceptedNoAcceptedRequest>().Where(a => a.IdUser == idUser);
+        }
+
+        public int DeleteAcceptRequest(int id)
+        {
+            return database.Delete<AcceptedNoAcceptedRequest>(id);
         }
     }
 }

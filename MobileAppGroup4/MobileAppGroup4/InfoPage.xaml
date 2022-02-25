@@ -4,29 +4,29 @@
              x:Class="MobileAppGroup4.InfoPage" BackgroundImageSource="background.png" Title="Информация" >
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout VerticalOptions="Center">
+            <StackLayout VerticalOptions="Center" >
                 <StackLayout>
                     <Frame VerticalOptions="Center"
                             IsClippedToBounds="True" HeightRequest="60" WidthRequest="60">
                         <Label Text="Когда нужна передержка кошек?" FontSize="24"  HorizontalTextAlignment="Center"  Background="White"/>
                     </Frame>
                 </StackLayout>
-                <StackLayout Spacing="20">
-                    <StackLayout VerticalOptions="CenterAndExpand" Orientation="Vertical" Padding="0, 20">
+                <StackLayout Padding="30">
+                    <StackLayout VerticalOptions="CenterAndExpand" Orientation="Vertical">
                         <Image Source="sick_girl.png" HeightRequest="90" WidthRequest="90"/>
                         <StackLayout Orientation="Vertical">
                             <Frame VerticalOptions="Center"
-                                CornerRadius="20" IsClippedToBounds="True" HeightRequest="60" WidthRequest="60" Margin="60, 0">
-                                <Label Text="Кто-то из ваших родственников, приехавших погостить, страдает аллергией?" FontSize="14"  HorizontalTextAlignment="Center"  Background="White"/>
+                                CornerRadius="20" IsClippedToBounds="True" HeightRequest="60" WidthRequest="60">
+                                <Label Text="Кто-то из ваших родственников, приехавших погостить, страдает аллергией?" FontSize="16"  HorizontalTextAlignment="Center"  Background="White"/>
                             </Frame>
                         </StackLayout>
                     </StackLayout>
-                    <StackLayout VerticalOptions="CenterAndExpand" Orientation="Vertical" Spacing="30">
+                    <StackLayout VerticalOptions="CenterAndExpand" Orientation="Vertical">
                         <Image Source="suitcase.png" HeightRequest="90" WidthRequest="90"/>
                         <StackLayout Orientation="Vertical">
                             <Frame VerticalOptions="Center"
-                                CornerRadius="20" IsClippedToBounds="True" HeightRequest="60" WidthRequest="60" Margin="60, 0">
-                                <Label Text="Вы уезжаете в командировку или на отдых, а кошку оставить не с кем?" FontSize="14"  HorizontalTextAlignment="Center"  Background="White"/>
+                                CornerRadius="20" IsClippedToBounds="True" HeightRequest="60" WidthRequest="60">
+                                <Label Text="Вы уезжаете в командировку или на отдых, а кошку оставить не с кем?" FontSize="16"  HorizontalTextAlignment="Center"  Background="White"/>
                             </Frame>
                         </StackLayout>
                     </StackLayout>
@@ -34,8 +34,8 @@
                         <Image Source="clock.png" HeightRequest="90" WidthRequest="90"/>
                         <StackLayout Orientation="Vertical">
                             <Frame VerticalOptions="Center"
-                                    CornerRadius="20" IsClippedToBounds="True" HeightRequest="60" WidthRequest="60" Margin="60, 0">
-                                <Label Text="Нерегулярный график работы не всегда позволяет вам полноценно ухаживать за своим питомцем?" FontSize="14"  HorizontalTextAlignment="Center"  Background="White"/>
+                                    CornerRadius="20" IsClippedToBounds="True" HeightRequest="60" WidthRequest="60">
+                                <Label Text="Нерегулярный график работы не всегда позволяет вам полноценно ухаживать за своим питомцем?" FontSize="16"  HorizontalTextAlignment="Center"  Background="White"/>
                             </Frame>
                         </StackLayout>
                     </StackLayout>
