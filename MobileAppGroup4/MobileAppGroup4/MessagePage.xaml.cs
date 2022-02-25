@@ -25,15 +25,20 @@ namespace MobileAppGroup4
         {
             if (App.Database.GetCatsitterId(IdUser) != null)
             {
-                Catsitter = App.Database.GetCatsitterId(IdUser);
-                messagesList.ItemsSource = App.Database.GetRequestCatsitter(Catsitter.Id);
-                acceptMessagesList.ItemsSource = App.Database.GetAcceptRequestUser(IdUser); ;
+                UpdateMessage();
                 base.OnAppearing();
             }
             else
             {
                 DisplayAlert("Уведомление","У вас нет актуальныйх сообщений","Закрыть");
             }
+        }
+
+        public void UpdateMessage()
+        {
+            Catsitter = App.Database.GetCatsitterId(IdUser);
+            messagesList.ItemsSource = App.Database.GetRequestCatsitter(Catsitter.Id);
+            acceptMessagesList.ItemsSource = App.Database.GetAcceptRequestUser(IdUser); ;
         }
 
         private async void messagesList_ItemSelected(object sender, SelectedItemChangedEventArgs e)
@@ -52,6 +57,7 @@ namespace MobileAppGroup4
                 };
                 App.Database.SaveAcceptedRequest(accept);
                 App.Database.DeleteRequest(selectedRequest.IdRequest);
+                UpdateMessage();
             }
             else
             {
@@ -66,8 +72,8 @@ namespace MobileAppGroup4
                 };
                 App.Database.SaveAcceptedRequest(accept);
                 App.Database.DeleteRequest(selectedRequest.IdRequest);
-            }
-            
+                UpdateMessage();
+            }            
         }
 
         private void acceptMessagesList_ItemSelected(object sender, SelectedItemChangedEventArgs e)
