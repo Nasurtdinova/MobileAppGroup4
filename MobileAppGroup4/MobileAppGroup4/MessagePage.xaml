@@ -11,10 +11,9 @@
                         <DataTemplate>
                             <ViewCell>
                                 <StackLayout  Orientation="Horizontal">
-                                    <Label Text="Вам пользователь"/>
+                                    <Label Text="Пользователь"/>
                                     <Label Text="{Binding NameUser}"/>
-                                    <Label Text="отправил запрос на дату"/>
-                                    <Label Text="{Binding Date}"/>
+                                    <Label Text="отправил запрос"/>
                                 </StackLayout>
                             </ViewCell>
                         </DataTemplate>

@@ -25,7 +25,9 @@ namespace MobileAppGroup4
         {
             if (App.Database.GetCatsitterId(IdUser) != null)
             {
-                UpdateMessage();
+                Catsitter = App.Database.GetCatsitterId(IdUser);
+                messagesList.ItemsSource = App.Database.GetRequestCatsitter(Catsitter.Id);
+                acceptMessagesList.ItemsSource = App.Database.GetAcceptRequestUser(IdUser);
                 base.OnAppearing();
             }
             else
@@ -38,13 +40,13 @@ namespace MobileAppGroup4
         {
             Catsitter = App.Database.GetCatsitterId(IdUser);
             messagesList.ItemsSource = App.Database.GetRequestCatsitter(Catsitter.Id);
-            acceptMessagesList.ItemsSource = App.Database.GetAcceptRequestUser(IdUser); ;
+            acceptMessagesList.ItemsSource = App.Database.GetAcceptRequestUser(IdUser);
         }
 
         private async void messagesList_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             Request selectedRequest = (Request)e.SelectedItem;
-            if (await DisplayAlert("Уведомление", $"Вы хотите принять запрос от {selectedRequest.NameUser}?", "Принять", "Отклонить"))
+            if (await DisplayAlert("Уведомление", $"Пользователь хочет оставить кота {App.Database.GetCat(selectedRequest.IdCat)} {selectedRequest.Date}. Он оставил вам сообщение: '{selectedRequest.Message}' и номер телефона {selectedRequest.PhoneNumber}. Вы хотите принять запрос от {selectedRequest.NameUser}?", "Принять", "Отклонить"))
             {
                 AcceptedNoAcceptedRequest accept = new AcceptedNoAcceptedRequest()
                 {
