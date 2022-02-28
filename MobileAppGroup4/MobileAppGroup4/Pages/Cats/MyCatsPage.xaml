@@ -28,7 +28,6 @@
                                             <Label Text="{Binding Breed}"/>
                                         </StackLayout>
                                     </StackLayout>
-
                                 </StackLayout>
                             </ViewCell.View>
                         </ViewCell>

@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -30,8 +29,8 @@ namespace MobileAppGroup4
 
         private async void catsittersList_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            Catsitter selectedProject = (Catsitter)e.SelectedItem;
-            await Navigation.PushAsync(new InfoCatsitterPage(selectedProject, IdUser));
+            Catsitter selectedCatsitter = (Catsitter)e.SelectedItem;
+            await Navigation.PushAsync(new InfoCatsitterPage(selectedCatsitter, IdUser));
         }
     }
 }

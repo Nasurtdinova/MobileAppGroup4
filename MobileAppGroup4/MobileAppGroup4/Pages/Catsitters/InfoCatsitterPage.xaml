@@ -13,7 +13,6 @@
                 <Label Text="О себе" FontSize="Large"></Label>
                 <Label x:Name="info" Text="{Binding Catsitter.Info}"/>
             </StackLayout>
-
             <StackLayout>
                 <StackLayout Orientation="Horizontal">
                     <Label Text="Дети до 10 лет" HorizontalOptions="StartAndExpand" FontSize="Large"></Label>
@@ -41,7 +40,6 @@
                         <Label Text="давать лекарства"></Label>
                     </StackLayout>
                 </StackLayout>
-               
             </StackLayout>
             <StackLayout VerticalOptions="EndAndExpand" Orientation="Horizontal">
                 <Button Text="Отправить запрос" HorizontalOptions="FillAndExpand" Clicked="send_Request"/>

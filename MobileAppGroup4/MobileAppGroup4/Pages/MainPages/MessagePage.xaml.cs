@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -76,11 +75,6 @@ namespace MobileAppGroup4
                 App.Database.DeleteRequest(selectedRequest.IdRequest);
                 UpdateMessage();
             }            
-        }
-
-        private void acceptMessagesList_ItemSelected(object sender, SelectedItemChangedEventArgs e)
-        {
-
         }
     }
 }

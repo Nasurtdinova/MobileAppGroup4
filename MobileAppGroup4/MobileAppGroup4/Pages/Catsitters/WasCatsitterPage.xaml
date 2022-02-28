@@ -9,7 +9,6 @@
                     <Label Text="Вы являетесь котситтером," />
                     <Label Text="{Binding Catsitter.Name}"/>
                 </StackLayout>
-
                 <StackLayout>
                     <StackLayout Spacing="20" >
                         <StackLayout>
@@ -105,7 +104,6 @@
                     <Button Text="Изменить" Clicked="update_Clicked" HorizontalOptions="FillAndExpand"/>
                 </StackLayout>
             </StackLayout>
-           
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>

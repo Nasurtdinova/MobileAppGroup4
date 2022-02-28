@@ -26,6 +26,5 @@
                 <Button Text="Sign up" HorizontalOptions="FillAndExpand" Clicked="Register_Clicked"></Button>
             </StackLayout>
         </StackLayout>
-     
     </ContentPage.Content>
 </ContentPage>

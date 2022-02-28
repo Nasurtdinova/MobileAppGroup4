@@ -28,6 +28,7 @@ namespace MobileAppGroup4
             {
                 Navigation.PushAsync(new WasCatsitterPage(App.Database.GetCatsitterId(User.Id)));
             }
+
             for (int i = 0; i <= 20; i++)
             {
                 pickerYears.Items.Add(i.ToString());

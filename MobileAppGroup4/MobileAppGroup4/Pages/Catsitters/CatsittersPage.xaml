@@ -20,7 +20,6 @@
                                         <Label Text="{Binding Address}"/>
                                     </StackLayout>
                                 </StackLayout>
-                                
                             </StackLayout>
                         </ViewCell.View>
                     </ViewCell>

@@ -22,7 +22,7 @@
                 </StackLayout>
                 <StackLayout>
                     <Label Text="Сообщения от котситтеров" HorizontalOptions="CenterAndExpand" FontSize="20"></Label>
-                    <ListView x:Name="acceptMessagesList" SeparatorColor="Black" ItemsSource="{Binding}" ItemSelected="acceptMessagesList_ItemSelected">
+                    <ListView x:Name="acceptMessagesList" SeparatorColor="Black" ItemsSource="{Binding}">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell>

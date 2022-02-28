@@ -26,6 +26,7 @@ namespace MobileAppGroup4
             {
                 pickerYears.Items.Add(i.ToString());
             }
+
             if (Catsitter.Child)
             {
                 child.IsToggled = true;
@@ -77,7 +78,6 @@ namespace MobileAppGroup4
             {
                 await DisplayAlert("Сообщение об ошибке", ex.Message, "OK");
             }
-            //UpdateList();
         }
 
         private async void TakePhotoAsync(object sender, EventArgs e)
@@ -102,7 +102,6 @@ namespace MobileAppGroup4
             {
                 await DisplayAlert("Сообщение об ошибке", ex.Message, "OK");
             }
-            //UpdateList();
         }
 
         private async void remove_Clicked(object sender, EventArgs e)

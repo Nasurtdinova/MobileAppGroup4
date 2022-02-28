@@ -24,10 +24,12 @@ namespace MobileAppGroup4
             {
                 pickerYear.Items.Add(i.ToString());
             }
+
             for (int i = 0; i <= 11; i++)
             {
                 pickerMounth.Items.Add(i.ToString());
             }
+
             if (cat.IsFriendly)
             {
                 friendly.IsToggled = true;
